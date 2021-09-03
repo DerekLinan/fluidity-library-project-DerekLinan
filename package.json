@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/TechtonicAcademy/fluidity-library-project-DerekLinan/issues"
   },
-  "homepage": "https://github.com/TechtonicAcademy/fluidity-library-project-DerekLinan#readme"
+  "homepage": "https://github.com/TechtonicAcademy/fluidity-library-project-DerekLinan#readme",
+  "dependencies": {
+    "parcel": "^2.0.0-rc.0",
+    "sass": "^1.39.0"
+  }
 }
