@@ -1,0 +1,64 @@
+@import "../abstracts/colors";
+@import "../abstracts/spacing.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primaryColor;
+  overflow: hidden;
+  padding-left: $spacingLarge;
+  padding-right: $spacingMedium;
+}
+.header__title {
+  color: $invertedTextColor;
+}
+.navbar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__li {
+  list-style-type: none;
+  color: $invertedTextColorFade;
+  margin: $spacingMedium;
+}
+
+.navbar__li--selected {
+  color: $invertedTextColor;
+}
+
+.navbar__ul {
+  padding: $spacingMedium;
+}
+
+.searchbar{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    padding: $spacingSmall;
+
+}
+.searchbar__input {
+    background-color: $invertedTextColor;
+    border-radius: 6px;
+    color: $primaryTextColorFade;
+    flex-grow: 1;
+    height: 2em;
+    margin-right: $spacingSmall;
+    padding-left: $spacingMedium;
+}
+
+.searchbar__button{
+    $searchColor: hsl(177, 100%, 40%);
+    color: $searchColor;
+    border-color: $searchColor;
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: $spacingSmall;
+    background-color: $primaryColor;
+}
