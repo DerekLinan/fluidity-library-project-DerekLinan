@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<header>
-    <h1>
-        The Library
-    </h1>
-    <ul>
-        <li>Home</li>
-        <li>Bookshelf</li>
-        <li>Add Book</li>
-    </ul>
-    <div>
-        <input type="text" >
-        <button>Search</button>
+  </head>
+  <body class="body">
+    <header class="header">
+      <h1 class="header__title">The Library</h1>
+      <nav class="navbar">
+        <ul class="navbar navbar__ul">
+          <li class="navbar__li navbar__li--selected">Home</li>
+          <li class="navbar__li">Bookshelf</li>
+          <li class="navbar__li">Add Book</li>
+        </ul>
+      </nav>
+
+      <div class="searchbar">
+        <input class="searchbar__input" type="text" />
+        <button class="searchbar__button">Search</button>
+      </div>
+    </header>
+    <div class="landing">
+      <img class="landing__img" />
+      <h1 class="landing__title">Books.</h1>
+      <h2 class="landing__subtitle">Read em & weep</h2>
     </div>
-</header>
-<body>
-    <img>
-    <h1>Books.</h1>
-    <h2>Read em & weep</h2>
-    <h3>Welcome to the Library</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum minima, optio facilis maiores doloribus aliquid tempore facere ut id, laborum voluptas corporis? Neque pariatur vitae animi ratione nostrum voluptate dicta.</p>
-    <button>See Books</button>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo molestias nam animi, quidem aliquam minima amet fugiat ea sunt nostrum.</p>
-    <button>Add a Book</button>
-</body>
-<footer>
-    <p>Copyright 2020 ya boi</p>
-</footer>
+    <main class="main">
+      <section class="section">
+        <h3 class="section__header">Welcome to the Library</h3>
+        <p class="section__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          minima, optio facilis maiores doloribus aliquid tempore facere ut id,
+          laborum voluptas corporis? Neque pariatur vitae animi ratione nostrum
+          voluptate dicta.
+        </p>
+        <button class="button">See Books</button>
+      </section>
+      <section class="section">
+        <p class="section__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          molestias nam animi, quidem aliquam minima amet fugiat ea sunt
+          nostrum.
+        </p>
+        <button class="button">Add a Book</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">
+        Copyright <time datetime="2021">2021</time> ya boi
+      </p>
+    </footer>
+  </body>
 </html>
