@@ -1,2 +1,5 @@
-@import "./base/_reset";
-@import "./blocks/header";
+@use "./base/_reset";
+@use "./blocks/header";
+@use "./blocks/landing";
+@use "./blocks/section";
+@use "./blocks/main";

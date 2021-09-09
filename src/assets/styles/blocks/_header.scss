@@ -9,40 +9,42 @@
   overflow: hidden;
   padding-left: $spacingLarge;
   padding-right: $spacingMedium;
+
+  &__title {
+    color: $invertedTextColor;
+    font-weight: normal;
+  }
 }
-.header__title {
-  color: $invertedTextColor;
-}
+
 .navbar {
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: center;
+
+  &__li {
+    list-style-type: none;
+    color: $invertedTextColorFade;
+    margin: $spacingMedium;
+  }
+
+  &__li--selected {
+    color: $invertedTextColor;
+  }
+
+  &__ul {
+    padding: $spacingMedium;
+  }
 }
 
-.navbar__li {
-  list-style-type: none;
-  color: $invertedTextColorFade;
-  margin: $spacingMedium;
-}
+.searchbar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  padding: $spacingSmall;
 
-.navbar__li--selected {
-  color: $invertedTextColor;
-}
-
-.navbar__ul {
-  padding: $spacingMedium;
-}
-
-.searchbar{
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    padding: $spacingSmall;
-
-}
-.searchbar__input {
+  &__input {
     background-color: $invertedTextColor;
     border-radius: 6px;
     color: $primaryTextColorFade;
@@ -50,9 +52,9 @@
     height: 2em;
     margin-right: $spacingSmall;
     padding-left: $spacingMedium;
-}
+  }
 
-.searchbar__button{
+  &__button {
     $searchColor: hsl(177, 100%, 40%);
     color: $searchColor;
     border-color: $searchColor;
@@ -61,4 +63,5 @@
     border-width: 1px;
     padding: $spacingSmall;
     background-color: $primaryColor;
+  }
 }
