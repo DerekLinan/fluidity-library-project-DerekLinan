@@ -1,0 +1,14 @@
+@import "../abstracts/spacing";
+@import "../abstracts/colors";
+
+.button{
+    background-color: darken($primaryColor, 5%);
+    margin: $spacingSmall;
+    padding: $spacingSmall;
+    color: $invertedTextColor;
+    width: 140px;
+    height: 2em;
+    font-size: 0.9em;
+    font-weight: bold;
+    border-radius: $buttonRadius;
+}

@@ -46,7 +46,7 @@
 
   &__input {
     background-color: $invertedTextColor;
-    border-radius: 6px;
+    border-radius: $buttonRadius;
     color: $primaryTextColorFade;
     flex-grow: 1;
     height: 2em;
@@ -59,7 +59,7 @@
     color: $searchColor;
     border-color: $searchColor;
     border-style: solid;
-    border-radius: 4px;
+    border-radius: $buttonRadius - 2px;
     border-width: 1px;
     padding: $spacingSmall;
     background-color: $primaryColor;
