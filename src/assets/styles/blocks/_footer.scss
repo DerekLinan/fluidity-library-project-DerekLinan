@@ -1,0 +1,19 @@
+@import "../abstracts/spacing";
+
+.footer {
+  background-color: lightgray;
+  text-align: center;
+  padding-top: $spacingSmall;
+  padding-bottom: $spacingSmall;
+
+  &__text {
+      padding: $spacingSmall;
+    font-size: 0.9em;
+  }
+  &__horizontal-line {
+    width: 100%;
+    border-style: solid none none none;
+    border-width: 1px;
+    border-color: black;
+  }
+}

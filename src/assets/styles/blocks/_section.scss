@@ -1,19 +1,18 @@
 @import "../abstracts/colors";
 @import "../abstracts/spacing";
- .section{
-
-     &__header{
-         margin: $spacingMedium;
-         font-size: 1.5em;
-         font-weight: normal;
-         text-align: center;
-     }
-     &__text{
-         margin-top: $spacingMedium;
-         margin-bottom: $spacingMedium;
-         padding-left: $spacingLarge;
-         padding-right: $spacingLarge;
-         text-align: left;
-         font-size: 1em;
-     }
- }
+.section {
+  &__header {
+    margin: $spacingMedium;
+    font-size: 1.5em;
+    font-weight: normal;
+    text-align: center;
+  }
+  &__text {
+    margin-top: $spacingMedium;
+    margin-bottom: $spacingMedium;
+    padding-left: $spacingLarge;
+    padding-right: $spacingLarge;
+    text-align: left;
+    font-size: 1em;
+  }
+}
