@@ -1,13 +1,18 @@
 @import "../abstracts/spacing";
 
 .footer {
+  position: fixed;
+  bottom: $spacingSmall;
   background-color: lightgray;
   text-align: center;
   padding-top: $spacingSmall;
   padding-bottom: $spacingSmall;
+  width: 100%;
+  height: $footerHeight;
 
   &__text {
-      padding: $spacingSmall;
+    bottom: $spacingSmall;
+    padding: $spacingSmall;
     font-size: 0.9em;
   }
   &__horizontal-line {
