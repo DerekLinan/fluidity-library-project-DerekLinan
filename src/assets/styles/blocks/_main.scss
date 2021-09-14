@@ -1,0 +1,10 @@
+@import "../abstracts/spacing";
+
+.main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: $spacingLarge;
+}
