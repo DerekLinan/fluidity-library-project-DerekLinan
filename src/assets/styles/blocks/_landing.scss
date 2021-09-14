@@ -1,4 +1,5 @@
 @import "../abstracts/colors";
+@import "../abstracts/spacing";
 
 .landing {
   position: relative;
@@ -16,6 +17,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -100%);
+
+    @media (max-width: $mobileWidthMax){
+      font-size: 2em;
+    }
   }
   &__subtitle {
     color: $invertedTextColor;
@@ -25,5 +30,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, 50%);
+
+    @media (max-width: $mobileWidthMax){
+      width: 100%;
+      font-size: 1em;
+      text-align: center;;
+    }
   }
 }
