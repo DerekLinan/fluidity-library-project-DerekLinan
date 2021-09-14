@@ -4,3 +4,11 @@ $spacingLarge: 20px;
 $buttonRadius: 6px;
 $footerHeight: 2em;
 $mobileWidthMax: 560px;
+
+@mixin pos-nav {
+  position: absolute;
+  right: $spacingSmall;
+  top: 5px;
+  min-height: 2.5em;
+  min-width: 2.5em;
+}

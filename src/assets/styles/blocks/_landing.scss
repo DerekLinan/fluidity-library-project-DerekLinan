@@ -8,6 +8,11 @@
     position: relative;
     width: 100%;
     z-index: -1;
+
+    @media (max-width: $mobileWidthMax){
+      min-height: 175px;
+
+    }
   }
   &__title {
     color: $invertedTextColor;
@@ -19,7 +24,7 @@
     transform: translate(-50%, -100%);
 
     @media (max-width: $mobileWidthMax){
-      font-size: 2em;
+      font-size: 2.5em;
     }
   }
   &__subtitle {
@@ -33,7 +38,7 @@
 
     @media (max-width: $mobileWidthMax){
       width: 100%;
-      font-size: 1em;
+      font-size: 1.5em;
       text-align: center;;
     }
   }
