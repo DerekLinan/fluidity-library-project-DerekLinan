@@ -12,3 +12,7 @@
     font-weight: bold;
     border-radius: $buttonRadius;
 }
+
+.button:hover{
+    background-color: lighten($primaryColor, 10%);
+}

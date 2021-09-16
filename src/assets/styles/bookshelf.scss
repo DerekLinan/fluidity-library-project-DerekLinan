@@ -1,0 +1,15 @@
+@use "./base/_reset";
+@use "./blocks/header";
+@use "./blocks/footer";
+@use "./blocks/body";
+@use "./blocks/book-card";
+@use "./blocks/section";
+
+@import "../styles/abstracts/spacing";
+
+.bookshelf {
+  display: flex;
+  margin: $spacingMedium;
+  flex-wrap: wrap;
+  justify-content: center;
+}
