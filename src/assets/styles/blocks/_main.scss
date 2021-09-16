@@ -2,9 +2,10 @@
 
 .main {
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
   justify-content: start;
+  justify-self: end;
   align-items: center;
-  margin-bottom: $spacingLarge;
-}
+  max-height: 100%;
+  margin-bottom: 1.5* $footerHeight;
+} 

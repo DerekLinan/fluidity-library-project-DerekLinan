@@ -1,15 +1,23 @@
 @use "./base/_reset";
 @use "./blocks/header";
 @use "./blocks/footer";
+@use "./blocks/main";
 @use "./blocks/body";
 @use "./blocks/book-card";
 @use "./blocks/section";
+@use "./blocks/scrollbar";
 
 @import "../styles/abstracts/spacing";
 
 .bookshelf {
+  bottom: 0px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  position: absolute;
+  padding: $spacingLarge + $spacingMedium;
   display: flex;
-  margin: $spacingMedium;
+  overflow: hidden auto;
   flex-wrap: wrap;
   justify-content: center;
 }
