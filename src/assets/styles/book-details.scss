@@ -15,14 +15,20 @@
   flex-direction: row;
   justify-content: center;
   position: relative;
+  padding-bottom: $spacingLarge;
   margin: $spacingMedium;
+
   .book-card {
     padding: 0px;
+    margin-right: $spacingSmall;
     flex-shrink: 0;
-    z-index: -999;
   }
 
-  &__info{
-      overflow: scroll;
+  &__info {
+      display: flex;
+      flex-direction: column;
+      gap: $spacingMedium;
+    flex-grow: 1;
+    overflow: hidden auto;
   }
 }
