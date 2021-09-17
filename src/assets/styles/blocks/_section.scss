@@ -1,6 +1,8 @@
 @import "../abstracts/colors";
 @import "../abstracts/spacing";
 .section {
+overflow: scroll;
+
   &__header {
     margin: $spacingMedium;
     flex-shrink: 0;
@@ -20,9 +22,14 @@
 }
 
 .bookshelf-section{
-  position: relative;
-  align-self: stretch;
-  height: 90vh;
+  position: fixed;
+  top: 8em;
+  bottom: $footerHeight;
+  left: 0;
+  right: 0;
   padding: $spacingLarge;
   margin-right: 20px; //shift scrollbar left
+  margin-bottom: $footerHeight;
+  align-content: center;
+  overflow: hidden auto;
 }

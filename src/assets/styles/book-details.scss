@@ -7,3 +7,22 @@
 @use "./blocks/section";
 @use "./blocks/scrollbar";
 @use "./blocks/button";
+
+@import "./abstracts/spacing";
+
+.book-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  margin: $spacingMedium;
+  .book-card {
+    padding: 0px;
+    flex-shrink: 0;
+    z-index: -999;
+  }
+
+  &__info{
+      overflow: scroll;
+  }
+}

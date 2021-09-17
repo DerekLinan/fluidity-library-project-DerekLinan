@@ -10,14 +10,15 @@
 @import "../styles/abstracts/spacing";
 
 .bookshelf {
-  bottom: 0px;
-  top: 0px;
-  left: 0px;
-  right: 0px;
   position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   padding: $spacingLarge + $spacingMedium;
   display: flex;
-  overflow: hidden auto;
+  // overflow: hidden auto;
+  overflow:hidden auto;
   flex-wrap: wrap;
   justify-content: center;
 }
