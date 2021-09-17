@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/6e5279358e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./assets/styles/book-details.scss" />
+    <title>Document</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <h1 class="header__title">The Library</h1>
+
+      <span class="fas fa-bars nav-icon"></span>
+      <input type="checkbox" class="nav-button" />
+
+      <nav class="navbar">
+        <ul class="navbar__ul">
+          <li class="navbar__li">Home</li>
+          <a href="bookshelf.html"><li class="navbar__li">Bookshelf</li></a>
+          <li class="navbar__li">Add Book</li>
+        </ul>
+      </nav>
+
+      <div class="searchbar">
+        <input
+          class="searchbar__input"
+          type="text"
+          placeholder="Search by Title/Author"
+        />
+        <button class="searchbar__button">Search</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section">
+        <div class="book-details">
+          <div class="book-card">
+              <img class="book-card__img" src="assets/images/watership-down.jpg">
+              <div class="rating">
+                  <!-- TODO must be changed to handle rating system -->
+                  <input class="rating__input" type="radio" id="one" name="rating" value="1">
+                  <label class="rating__label" for="one"></label>
+                  <input class="rating__input" type="radio" id="two" name="rating" value="2">
+                  <label class="rating__label" for="two"></label>
+                  <input class="rating__input" type="radio" id="three" name="rating" value="3">
+                  <label class="rating__label" for="three"></label>
+                  <input class="rating__input" type="radio" id="four" name="rating" value="4">
+                  <label class="rating__label" for="four"></label>
+                  <input class="rating__input" type="radio" id="five" name="rating" value="5">
+                  <label class="rating__label" for="five"></label>
+              </div>
+          </div>
+          <div class="book-details__info">
+            <h1 class="section__header">Watership Down</h1>
+            <h2 class="section__h2">Richard Adams</h2>
+            <h3 class="section__h3">Published: June 1st, 1975</h3>
+            <h3 class="section__h3">475 pages</h3>
+            <p class="section__text">
+              Set in England's Downs, a once idyllic rural landscape, this
+              stirring tale of adventure, courage and survival follows a band of
+              very special creatures on their flight from the intrusions of man
+              and the certain destruction of their home. led by a stouthearted
+              pair of friends, they journey forth from their native Sandleford
+              Warren through the harrowing trials posed by predators and
+              adversaries, to a mysterious promised land and a more perfect
+              society.
+            </p>
+          </div>
+        </div>
+        <div class="h-button-group">
+          <button class="button">Edit This Book</button>
+          <button class="button button--secondary-color">Back to Shelf</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">
+        Copyright <time datetime="2021">2021</time> ya boi
+      </p>
+      <hr class="footer__horizontal-line" />
+    </footer>
+  </body>
+</html>

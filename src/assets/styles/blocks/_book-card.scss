@@ -2,9 +2,6 @@
 @import "../abstracts/spacing";
 
 .book-card {
-  border-style: solid;
-  border-width: 2px;
-  border-color: $primaryTextColor;
   margin: $spacingLarge;
   display: flex;
   flex-direction: column;
@@ -15,17 +12,23 @@
   overflow: hidden;
   position: relative;
 
-  @media (max-width: $mobileWidthMax){
+  &--border {
+    border-style: solid;
+    border-width: 2px;
+    border-color: $primaryTextColor;
+  }
+
+  @media (max-width: $mobileWidthMax) {
     max-height: 22em;
   }
 
   &__img {
     max-width: 14em;
-    max-height: 10em;
+    max-height: 16em;
     margin: $spacingLarge;
     object-fit: contain;
 
-    @media (max-width: $mobileWidthMax){
+    @media (max-width: $mobileWidthMax) {
       max-height: 8em;
     }
   }
@@ -57,13 +60,13 @@
   }
 }
 
-.overlay__text{
-    text-align: center;
-    height: 2em;
-    color: $invertedTextColor;
-    padding: $spacingLarge;
+.overlay__text {
+  text-align: center;
+  height: 2em;
+  color: $invertedTextColor;
+  padding: $spacingLarge;
 }
 
-.book-card:hover .book-card__overlay{
-    height: 40%;
+.book-card:hover .book-card__overlay {
+  height: 40%;
 }

@@ -1,11 +1,11 @@
 @import "../abstracts/spacing";
 
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: start;
   justify-self: end;
   align-items: center;
-  max-height: 100%;
   margin-bottom: 1.5* $footerHeight;
 } 

@@ -9,6 +9,20 @@
     text-align: center;
     color: $primaryTextColor;
   }
+  &__h2{
+    margin: $spacingMedium;
+    flex-shrink: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: $primaryTextColor;
+  }
+  &__h3{
+    margin: $spacingMedium;
+    flex-shrink: 0;
+    font-size: 1em;
+    font-style: oblique;
+    color: $primaryTextColor;
+  }
   &__text {
     margin-top: $spacingMedium;
     margin-bottom: $spacingMedium;
@@ -16,13 +30,19 @@
     padding-right: $spacingLarge;
     text-align: left;
     font-size: 1em;
+    color: $primaryTextColor;
   }
 }
 
 .bookshelf-section{
-  position: relative;
-  align-self: stretch;
-  height: 90vh;
+  position: fixed;
+  top: 8em;
+  bottom: $footerHeight;
+  left: 0;
+  right: 0;
   padding: $spacingLarge;
   margin-right: 20px; //shift scrollbar left
+  margin-bottom: $footerHeight;
+  align-content: center;
+  overflow: hidden auto;
 }
