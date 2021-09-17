@@ -10,28 +10,38 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 18em;
-  max-height: 36em;
+  width: 16em;
+  max-height: 30em;
   overflow: hidden;
   position: relative;
 
+  @media (max-width: $mobileWidthMax){
+    max-height: 22em;
+  }
+
   &__img {
-    width: 16em;
-    max-height: 27em;
+    max-width: 14em;
+    max-height: 10em;
     margin: $spacingLarge;
     object-fit: contain;
+
+    @media (max-width: $mobileWidthMax){
+      max-height: 8em;
+    }
   }
   &__title {
     margin: $spacingSmall;
     text-overflow: ellipsis;
     text-align: center;
     color: $primaryTextColor;
+    size: 2em;
   }
   &__author {
     margin: $spacingSmall;
     text-overflow: ellipsis;
     text-align: center;
     color: $primaryTextColor;
+    size: 1.5em;
   }
 
   &__overlay {
