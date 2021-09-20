@@ -6,6 +6,9 @@ $footerHeight: 2em;
 $mobileWidthMax: 560px;
 $mobileBookCardHeight: 22em;
 $mobileBookCardImageHeight: 8em;
+$bookCoverHeight: 16em;
+$bookCoverWidth: 12em;
+$inputHeight: 3em;
 
 @mixin pos-nav {
   position: absolute;
