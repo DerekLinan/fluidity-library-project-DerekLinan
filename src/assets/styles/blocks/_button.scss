@@ -18,6 +18,12 @@
   &--secondary-color:hover {
     background-color: lighten($secondaryColor, 10%) !important;
   }
+
+  &--danger-color{
+    background-color: pink;
+    border: solid 2px red;
+    color: black;
+  }
 }
 
 .button:hover {
