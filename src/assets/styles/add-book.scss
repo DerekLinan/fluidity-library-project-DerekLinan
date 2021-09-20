@@ -24,6 +24,11 @@
   grid-template-rows: $inputHeight $inputHeight 100fr $inputHeight $inputHeight;
   grid-template-columns: 10fr 6em 70fr 10fr 10fr;
   margin: $spacingLarge;
+
+  @media (max-width: $mobileWidthMax) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .add {
@@ -36,6 +41,12 @@
     text-align: right;
     margin-top: auto;
     margin-bottom: auto;
+
+    @media (max-width: $mobileWidthMax) {
+      text-align: center;
+      padding-bottom: 0;
+      padding-top: $spacingMedium;
+    }
   }
 
   &-synopsis-field,
@@ -64,13 +75,24 @@
     grid-column: 3 / 4;
     text-align: right;
     padding-right: $spacingSmall;
+
+    @media (max-width: $mobileWidthMax) {
+      text-align: center;
+      padding: 0;
+      padding-top: $spacingMedium;
+    }
   }
   &-pages-field {
     grid-column: 4 / 5;
   }
-  &-rating-field{
-      margin-top: auto;
-      margin-bottom: auto;
+  &-rating-field {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media (max-width: $mobileWidthMax){
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
 .grid--reposition {

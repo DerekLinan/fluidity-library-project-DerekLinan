@@ -1,7 +1,7 @@
 @import "../abstracts/spacing";
 @import "../abstracts/colors";
 
-.rating::before{
+.label-before::before{
     display:none;
     content: "Rating";
     margin: $spacingSmall;
