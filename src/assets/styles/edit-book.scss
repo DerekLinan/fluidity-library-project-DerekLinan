@@ -1,0 +1,102 @@
+@use "./base/_reset";
+@use "./blocks/header";
+@use "./blocks/footer";
+@use "./blocks/main";
+@use "./blocks/body";
+@use "./blocks/section";
+@use "./blocks/scrollbar";
+@use "./blocks/button";
+@use "./blocks/rating";
+@use "./blocks/book-cover";
+@use "./blocks/input";
+
+@import "./abstracts/spacing";
+
+.section {
+  width: 100vw;
+}
+
+.layout-block {
+  display: grid;
+  gap: $spacingMedium;
+  justify-content: start;
+  align-content: center;
+  grid-template-rows: $inputHeight $inputHeight 100fr $inputHeight $inputHeight;
+  grid-template-columns: 10fr 6em 70fr 10fr 10fr;
+  margin: $spacingLarge;
+
+  @media (max-width: $mobileWidthMax) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.add {
+  &-synopsis,
+  &-title,
+  &-author,
+  &-published,
+  &-rating {
+    grid-column: 1 / 2;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media (max-width: $mobileWidthMax) {
+      text-align: center;
+      padding-bottom: 0;
+      padding-top: $spacingMedium;
+    }
+  }
+
+  &-synopsis-field,
+  &-title-field,
+  &-author-field {
+    grid-column: 2 / 5;
+  }
+
+  &-published,
+  &-published-field,
+  &-pages,
+  &-pages-field {
+    grid-row: 4 / 5;
+  }
+
+  &-synopsis,
+  &-synopsis-field {
+    grid-row: 3 / 4;
+  }
+
+  &-published-field {
+    grid-column: 2 / 3;
+  }
+
+  &-pages {
+    grid-column: 3 / 4;
+    text-align: right;
+    padding-right: $spacingSmall;
+
+    @media (max-width: $mobileWidthMax) {
+      text-align: center;
+      padding: 0;
+      padding-top: $spacingMedium;
+    }
+  }
+  &-pages-field {
+    grid-column: 4 / 5;
+  }
+  &-rating-field {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media (max-width: $mobileWidthMax){
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+.grid--reposition {
+  grid-column: 5 / 6;
+  margin-left: auto;
+  margin-right: auto;
+}
