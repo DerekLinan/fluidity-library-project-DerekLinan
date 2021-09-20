@@ -19,7 +19,7 @@
   }
 
   @media (max-width: $mobileWidthMax) {
-    max-height: 22em;
+    max-height: $mobileBookCardHeight;
   }
 
   &__img {
@@ -29,7 +29,7 @@
     object-fit: contain;
 
     @media (max-width: $mobileWidthMax) {
-      max-height: 8em;
+      max-height: $mobileBookCardImageHeight;
     }
   }
   &__title {
