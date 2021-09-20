@@ -13,6 +13,10 @@
     align-items: center;
     margin: $spacingLarge;
 
+    @media (max-width: $mobileWidthMax){
+        height: $bookCoverHeight;
+    }
+
     &__image{
         max-width: $bookCoverWidth;
         max-height: $bookCoverHeight;
