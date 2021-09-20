@@ -4,6 +4,8 @@ $spacingLarge: 20px;
 $buttonRadius: 6px;
 $footerHeight: 2em;
 $mobileWidthMax: 560px;
+$mobileBookCardHeight: 22em;
+$mobileBookCardImageHeight: 8em;
 
 @mixin pos-nav {
   position: absolute;

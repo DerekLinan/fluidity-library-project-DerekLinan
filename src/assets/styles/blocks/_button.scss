@@ -24,11 +24,16 @@
   background-color: lighten($primaryColor, 10%);
 }
 
-.h-button-group {
+.button-group {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   gap: $spacingLarge;
   margin: $spacingMedium;
+
+  @media (max-width: $mobileWidthMax) {
+    flex-direction: column;
+    gap: $spacingSmall;
+  }
 }
