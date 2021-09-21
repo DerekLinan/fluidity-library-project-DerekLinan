@@ -1,27 +1,18 @@
 {
-  "name": "lib",
+  "name": "demo-1",
   "version": "1.0.0",
-  "description": "## Instructions:",
+  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "parcel": "^2.0.0-rc.0",
-    "sass": "^1.39.0"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html --open"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TechtonicAcademy/fluidity-library-project-DerekLinan.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TechtonicAcademy/fluidity-library-project-DerekLinan/issues"
-  },
-  "homepage": "https://github.com/TechtonicAcademy/fluidity-library-project-DerekLinan#readme",
-  "devDependencies": {
-    "@parcel/transformer-image": "^2.0.0-rc.0",
-    "@parcel/transformer-sass": "^2.0.0-rc.0"
+  "dependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

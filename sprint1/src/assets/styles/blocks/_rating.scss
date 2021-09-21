@@ -1,0 +1,14 @@
+@import "../abstracts/spacing";
+@import "../abstracts/colors";
+
+.label-before::before{
+    display:none;
+    content: "Rating";
+    margin: $spacingSmall;
+    text-align: center;
+    color: $primaryTextColor;
+
+    @media (max-width: $mobileWidthMax){
+        display:block;
+    }
+}

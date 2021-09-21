@@ -1,0 +1,82 @@
+@use "./base/_reset";
+@use "./blocks/header";
+@use "./blocks/footer";
+@use "./blocks/main";
+@use "./blocks/body";
+@use "./blocks/book-card";
+@use "./blocks/section";
+@use "./blocks/scrollbar";
+@use "./blocks/button";
+@use "./blocks/rating";
+
+@import "./abstracts/spacing";
+
+.book-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: $spacingLarge;
+  margin: $spacingMedium;
+
+  @media (max-width: $mobileWidthMax) {
+    flex-direction: column;
+  }
+
+  .book-card {
+    height: $mobileBookCardHeight;
+    padding: 0px;
+    margin-right: $spacingSmall;
+    flex-shrink: 0;
+
+    @media (max-width: $mobileWidthMax) {
+      justify-content: start;
+      gap: 2em;
+      position: absolute;
+      top: 1.5em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacingMedium;
+    flex-grow: 1;
+    overflow: hidden auto;
+
+    .section {
+      &__h2,
+      &__h3,
+      &__text {
+        @media (max-width: $mobileWidthMax) {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: $mobileWidthMax) {
+        &__header {
+          margin-top: 0;
+        }
+
+        &__header::after {
+          display: block;
+          height: $mobileBookCardImageHeight - 2.5em;
+          content: "";
+        }
+
+        &__h2 {
+          margin-top: -1em;
+        }
+
+        &__h2:first-of-type::after {
+          display: block;
+          height: 2em; //must match height of rating bar and text
+          content: "";
+        }
+      }
+    }
+  }
+}

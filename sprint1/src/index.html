@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/6e5279358e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/styles/index.scss">
+    <title>Document</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <h1 class="header__title">The Library</h1>
+
+      <span class="fas fa-bars nav-icon"></span>
+      <input type="checkbox" class="nav-button"/>
+
+      <nav class="navbar">
+        <ul class="navbar__ul">
+          <li class="navbar__li navbar__li--selected">Home</li>
+          <a href="bookshelf.html"><li class="navbar__li">Bookshelf</li></a>
+          <li class="navbar__li">Add Book</li>
+        </ul>
+      </nav>
+
+      <div class="searchbar">
+        <input class="searchbar__input" type="text" placeholder="Search by Title/Author"/>
+        <button class="searchbar__button">Search</button>
+      </div>
+    </header>
+    <div class="landing">
+      <img src="assets/images/reading-room.jpg" class="landing__img" />
+      <h1 class="landing__title">Books.</h1>
+      <h2 class="landing__subtitle">Read em & weep</h2>
+    </div>
+    <main class="main">
+      <section class="section">
+        <h3 class="section__header">Welcome to the Library</h3>
+        <p class="section__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+          minima, optio facilis maiores doloribus aliquid tempore facere ut id,
+          laborum voluptas corporis? Neque pariatur vitae animi ratione nostrum
+          voluptate dicta.
+        </p>
+      </section>
+      <button class="button" onclick=>See Books</button>
+      <section class="section">
+        <p class="section__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+          molestias nam animi, quidem aliquam minima amet fugiat ea sunt
+          nostrum.
+        </p>
+      </section>
+      <button class="button">Add a Book</button>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">
+        Copyright <time datetime="2021">2021</time> ya boi
+      </p>
+      <hr class="footer__horizontal-line">
+    </footer>
+  </body>
+</html>
