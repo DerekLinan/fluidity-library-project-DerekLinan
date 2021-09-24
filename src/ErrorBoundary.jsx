@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import Header from './blocks/Header';
 import Footer from './blocks/Footer';
 
 class ErrorBoundary extends Component {
@@ -14,7 +13,7 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.log(error, errorInfo);
+    this.errorMessage = { error, errorInfo };
   }
 
   render() {
@@ -24,8 +23,7 @@ class ErrorBoundary extends Component {
     if (error) {
       return (
         <>
-          <Header />
-          <p>`An error has occurred /n/n ${error.toString()}`</p>
+          <h1>Error has occurred.</h1>
           <Footer />
         </>
       );
@@ -35,11 +33,8 @@ class ErrorBoundary extends Component {
   }
 }
 
-ErrorBoundary.propsTypes = {
+ErrorBoundary.propTypes = {
   children: PropTypes.node.isRequired,
-};
-ErrorBoundary.defaultProps = {
-  children: {},
 };
 
 export default ErrorBoundary;

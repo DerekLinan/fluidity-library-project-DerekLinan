@@ -11,6 +11,10 @@ import Header from './blocks/Header';
 import Footer from './blocks/Footer';
 
 const App = () => {
+  const randomNum = Math.floor(Math.random() * 3) + 1;
+  if (randomNum > 1) {
+    throw new Error('Big scary error has occurred!');
+  }
   return (
     <Router>
       <div className="container">
