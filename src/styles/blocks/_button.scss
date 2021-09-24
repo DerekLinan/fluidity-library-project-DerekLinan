@@ -1,0 +1,45 @@
+@import '../abstracts/spacing';
+@import '../abstracts/colors';
+
+.button {
+  background-color: darken($primaryColor, 5%);
+  margin: $spacingSmall;
+  padding: $spacingSmall;
+  color: $invertedTextColor;
+  width: 140px;
+  height: 2em;
+  font-size: 0.9em;
+  font-weight: bold;
+  border-radius: $buttonRadius;
+
+  &--secondary-color {
+    background-color: $secondaryColor;
+  }
+  &--secondary-color:hover {
+    background-color: lighten($secondaryColor, 10%) !important;
+  }
+
+  &--danger-color {
+    background-color: pink;
+    border: solid 2px red;
+    color: black;
+  }
+}
+
+.button:hover {
+  background-color: lighten($primaryColor, 10%);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: $spacingLarge;
+  margin: $spacingMedium;
+
+  @media (max-width: $mobileWidthMax) {
+    flex-direction: column;
+    gap: $spacingSmall;
+  }
+}

@@ -1,5 +1,5 @@
-@import './abstracts/reset';
-body {
-  background-color: #fefefe;
-  color: #333;
-}
+@use './abstracts/reset';
+@use './blocks/landing';
+@use './blocks/section';
+@use './blocks/main';
+@use './blocks/button';
