@@ -33,7 +33,7 @@ const AddBook = () => {
             />
 
             <label className="section__text add-published">Published</label>
-            <select className="input__field add-published-field" />
+            <input type="date" className="input__field add-published-field" />
 
             <label className="section__text add-pages">Pages</label>
             <input className="input__field add-pages-field" type="number" />

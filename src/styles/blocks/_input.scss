@@ -29,6 +29,12 @@
     @include input-border-focus;
   }
 
+  &__field[type='date'] {
+    min-width: 10em;
+    padding: 0;
+    padding-left: $spacingMedium;
+  }
+
   &__area {
     @include input-border;
     resize: none;
