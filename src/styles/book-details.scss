@@ -6,6 +6,7 @@
 @use './blocks/rating';
 
 @import './abstracts/spacing';
+@import './abstracts/colors';
 
 .book-details {
   display: flex;
@@ -18,6 +19,18 @@
 
   @media (max-width: $mobileWidthMax) {
     flex-direction: column;
+  }
+
+  .label-before::before {
+    display: none;
+    content: 'Rating';
+    margin: $spacingSmall;
+    text-align: center;
+    color: $primaryTextColor;
+
+    @media (max-width: $mobileWidthMax) {
+      display: block;
+    }
   }
 
   .book-card {

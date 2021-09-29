@@ -1,5 +1,6 @@
 import Rating from '../blocks/Rating';
 import '../styles/book-details.scss';
+import '../styles/blocks/_rating.scss';
 import Cover from '../images/sin-eater.jpeg';
 
 const BookDetails = () => {
@@ -10,7 +11,9 @@ const BookDetails = () => {
           <div className="book-details">
             <div className="book-card">
               <img className="book-card__img" src={Cover} alt="book cover" />
-              <Rating />
+              <div className="label-before">
+                <Rating />
+              </div>
             </div>
             <div className="book-details__info">
               <h1 className="section__header">Watership Down</h1>
