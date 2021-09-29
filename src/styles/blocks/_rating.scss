@@ -1,0 +1,142 @@
+@import '../abstracts/colors';
+@import '../abstracts/spacing';
+
+@mixin block-default {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.rating {
+  color: $primaryTextColor;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: $inputHeight * 0.5;
+  width: $inputHeight * 0.5 * 5;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+
+  &__input {
+    opacity: 00%;
+    position: absolute;
+  }
+
+  &__block-1 {
+    @include block-default;
+    left: 0;
+    right: 90%;
+  }
+
+  &__block-2 {
+    @include block-default;
+    left: 10%;
+    right: 80%;
+  }
+
+  &__block-3 {
+    @include block-default;
+    left: 20%;
+    right: 70%;
+  }
+
+  &__block-4 {
+    @include block-default;
+    left: 30%;
+    right: 60%;
+  }
+
+  &__block-5 {
+    @include block-default;
+    left: 40%;
+    right: 50%;
+  }
+
+  &__block-6 {
+    @include block-default;
+    left: 50%;
+    right: 40%;
+  }
+
+  &__block-7 {
+    @include block-default;
+    left: 60%;
+    right: 30%;
+  }
+
+  &__block-8 {
+    @include block-default;
+    left: 70%;
+    right: 20%;
+  }
+
+  &__block-9 {
+    @include block-default;
+    left: 80%;
+    right: 10%;
+  }
+
+  &__block-10 {
+    @include block-default;
+    left: 90%;
+    right: 0;
+  }
+
+  &__display-1 {
+    @include block-default;
+    font-size: $inputHeight * 0.5 - 0.1em;
+    left: 0%;
+  }
+  &__display-2 {
+    @include block-default;
+    font-size: $inputHeight * 0.5 - 0.1em;
+    left: 20%;
+  }
+  &__display-3 {
+    @include block-default;
+    font-size: $inputHeight * 0.5 - 0.1em;
+    left: 40%;
+  }
+  &__display-4 {
+    @include block-default;
+    font-size: $inputHeight * 0.5 - 0.1em;
+    left: 60%;
+  }
+  &__display-5 {
+    @include block-default;
+    font-size: $inputHeight * 0.5 - 0.1em;
+    left: 80%;
+  }
+
+  &__left {
+    position: absolute;
+    right: 0px;
+    font-size: $inputHeight * 0.5 - 0.1em;
+  }
+
+  &__right {
+    position: absolute;
+    left: 0px;
+    font-size: $inputHeight * 0.5 - 0.1em;
+  }
+
+  // Handle input viewing
+  &__outline {
+    display: inline;
+  }
+  &__half,
+  &__star {
+    z-index: 0;
+    display: none;
+  }
+
+  &__label:hover > * ~ * {
+    display: inline;
+  }
+
+  &__input:checked ~ * {
+    display: inline;
+  }
+}

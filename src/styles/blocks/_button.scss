@@ -12,6 +12,11 @@
   font-weight: bold;
   border-radius: $buttonRadius;
 
+  @media (max-width: $mobileWidthMax) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   &--secondary-color {
     background-color: $secondaryColor;
   }

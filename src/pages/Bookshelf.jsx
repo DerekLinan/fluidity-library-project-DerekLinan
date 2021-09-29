@@ -5,22 +5,24 @@ const Bookshelf = () => {
   return (
     <>
       <main className="main">
-        <h1 className="section__header">Release the Kraken of Knowledge!</h1>
-        <section className="bookshelf-section">
-          <div className="bookshelf">
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
+        <section className="section">
+          <h1 className="section__header">Release the Kraken of Knowledge!</h1>
+          <div className="bookshelf-section">
+            <div className="bookshelf">
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+            </div>
           </div>
         </section>
       </main>

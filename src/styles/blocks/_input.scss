@@ -1,0 +1,40 @@
+@import '../abstracts/spacing';
+@import '../abstracts/colors';
+
+@mixin input-border {
+  outline: 0;
+  border-radius: 4px;
+  border-color: $primaryColor;
+  border-style: solid;
+  border-width: 2px;
+  transition: border-color 0.2s;
+}
+
+@mixin input-border-focus {
+  border-color: $secondaryColor;
+  box-shadow: 0 0 0.5em 2px $secondaryColor;
+}
+
+.input {
+  &__field,
+  &__area {
+    padding: $spacingMedium;
+  }
+
+  &__field {
+    @include input-border;
+  }
+
+  &__field:focus {
+    @include input-border-focus;
+  }
+
+  &__area {
+    @include input-border;
+    resize: none;
+  }
+
+  &__area:focus {
+    @include input-border-focus;
+  }
+}
