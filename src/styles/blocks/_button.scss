@@ -29,6 +29,11 @@
     border: solid 2px red;
     color: black;
   }
+
+  &--danger-color:hover {
+    background-color: darken(pink, $amount: 10%) !important;
+    color: red;
+  }
 }
 
 .button:hover {
