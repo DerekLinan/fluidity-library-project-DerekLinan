@@ -1,14 +1,23 @@
 import { useState, useEffect } from 'react';
 import BookCard from '../blocks/BookCard';
 import '../styles/bookshelf.scss';
-
-const [bookList, setBooks] = useState([]);
-
-useEffect(() => {
-  // load book data
-}, []);
+import { loadBooks } from '../scripts/Utils';
+import axios from 'axios';
 
 const Bookshelf = () => {
+  const [bookList, setBooks] = useState([]);
+
+  useEffect(() => {
+    loadBooks()
+      .then(({ data: books }) => {
+        setBooks(books);
+        console.log(books);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   return (
     <>
       <main className="main">
@@ -16,9 +25,15 @@ const Bookshelf = () => {
           <h1 className="section__header">Release the Kraken of Knowledge!</h1>
           <div className="bookshelf-section">
             <div className="bookshelf">
-              {bookList.map((book) => {
-                return <BookCard props={book} />;
-              })}
+              {bookList.map(({ id, title, image, author, synopsis }) => (
+                <BookCard
+                  id={id}
+                  author={author.trim()}
+                  title={title.trim()}
+                  image={image}
+                  synopsis={synopsis}
+                />
+              ))}
             </div>
           </div>
         </section>

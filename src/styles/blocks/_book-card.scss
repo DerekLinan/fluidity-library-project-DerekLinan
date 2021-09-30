@@ -58,14 +58,16 @@
     background-color: $primaryTextColor;
     opacity: 90%;
     transition: 0.2s ease;
+    overflow: scroll;
   }
 }
 
 .overlay__text {
-  text-align: center;
-  height: 2em;
+  text-align: left;
+  text-indent: 1em;
   color: $invertedTextColor;
   padding: $spacingLarge;
+  overflow: hidden;
 }
 
 .book-card:hover .book-card__overlay {

@@ -12,8 +12,8 @@ import Footer from './blocks/Footer';
 
 const App = () => {
   return (
-    <Router>
-      <div className="container">
+    <div className="container">
+      <Router>
         <Header />
         <Switch>
           <Route exact path="/" component={Index} />
@@ -24,8 +24,8 @@ const App = () => {
           <Route component={NotFound} />
         </Switch>
         <Footer />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 };
 
