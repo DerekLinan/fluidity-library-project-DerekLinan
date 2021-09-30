@@ -1,5 +1,12 @@
+import { useState, useEffect } from 'react';
 import BookCard from '../blocks/BookCard';
 import '../styles/bookshelf.scss';
+
+const [bookList, setBooks] = useState([]);
+
+useEffect(() => {
+  // load book data
+}, []);
 
 const Bookshelf = () => {
   return (
@@ -9,19 +16,9 @@ const Bookshelf = () => {
           <h1 className="section__header">Release the Kraken of Knowledge!</h1>
           <div className="bookshelf-section">
             <div className="bookshelf">
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
+              {bookList.map((book) => {
+                return <BookCard props={book} />;
+              })}
             </div>
           </div>
         </section>
