@@ -25,8 +25,8 @@ const Bookshelf = () => {
             {bookList.map(({ id, title, image, author, synopsis }) => (
               <BookCard
                 id={id + title}
-                author={author.trim()}
-                title={title.trim()}
+                author={author}
+                title={title}
                 image={image}
                 synopsis={synopsis}
               />
