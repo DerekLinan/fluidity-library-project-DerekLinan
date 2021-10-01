@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import '../styles/blocks/_rating.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarOutline } from '@fortawesome/free-regular-svg-icons';
 
-const Rating = () => (
+const Rating = ({ rating }) => (
   <>
     <div className="add-rating-field">
       <div className="rating" form="rating">
@@ -164,3 +165,7 @@ const Rating = () => (
 );
 
 export default Rating;
+
+Rating.propTypes = {
+  rating: PropTypes.number.isRequired,
+};
