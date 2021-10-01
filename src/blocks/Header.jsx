@@ -15,13 +15,13 @@ const Header = () => {
 
       <nav className="navbar">
         <ul className="navbar__ul">
-          <Link to="/" className="navbar__li navbar__li--selected">
+          <Link to="/" key="home" className="navbar__li">
             Home
           </Link>
-          <Link to="/bookshelf" className="navbar__li">
+          <Link to="/bookshelf" key="bookshelf" className="navbar__li">
             Bookshelf
           </Link>
-          <Link to="/add-book" className="navbar__li">
+          <Link to="/add-book" key="addbook" className="navbar__li">
             Add Book
           </Link>
         </ul>

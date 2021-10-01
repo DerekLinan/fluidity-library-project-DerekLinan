@@ -1,35 +1,50 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { loadBook } from '../scripts/Utils';
 import Rating from '../blocks/Rating';
 import '../styles/book-details.scss';
 import '../styles/blocks/_rating.scss';
-import Cover from '../images/sin-eater.jpeg';
 
 const BookDetails = () => {
+  const { id } = useParams();
+  const [book, setBook] = useState([]);
+  useEffect(() => {
+    loadBook(id)
+      .then(({ data: bookData }) => {
+        console.log(bookData);
+        setBook(bookData);
+      })
+      .catch((e) => {
+        throw new Error(e);
+      });
+  }, []);
+
+  // const [title, image, author, rating, synopsis, pages, published] = {
+  //   book,
+  // };
+
   return (
     <>
       <main className="main">
         <section className="section">
           <div className="book-details">
             <div className="book-card">
-              <img className="book-card__img" src={Cover} alt="book cover" />
+              <img
+                className="book-card__img"
+                crossOrigin="anonymous"
+                src={book.image}
+                alt={`${book.title}'s cover`}
+              />
               <div className="label-before">
-                <Rating />
+                <Rating rating={book.rating} />
               </div>
             </div>
             <div className="book-details__info">
-              <h1 className="section__header">Watership Down</h1>
-              <h2 className="section__h2">Richard Adams</h2>
-              <h3 className="section__h3">Published: June 1st, 1975</h3>
-              <h3 className="section__h3">475 pages</h3>
-              <p className="section__text">
-                Set in England`&apos`s Downs, a once idyllic rural landscape,
-                this stirring tale of adventure, courage and survival follows a
-                band of very special creatures on their flight from the
-                intrusions of man and the certain destruction of their home. led
-                by a stouthearted pair of friends, they journey forth from their
-                native Sandleford Warren through the harrowing trials posed by
-                predators and adversaries, to a mysterious promised land and a
-                more perfect society.
-              </p>
+              <h1 className="section__header">{book.title}</h1>
+              <h2 className="section__h2">{book.author}</h2>
+              <h3 className="section__h3">{`Published: ${book.published}`}</h3>
+              <h3 className="section__h3">{`${book.pages} pages`}</h3>
+              <p className="section__text">{book.synopsis}</p>
             </div>
           </div>
           <div className="button-group">

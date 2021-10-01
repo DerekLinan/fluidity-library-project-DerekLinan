@@ -18,9 +18,9 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Index} />
           <Route path="/add-book" component={AddBook} />
-          <Route path="/edit-book" component={EditBook} />
+          <Route path="/edit-book/:id" component={EditBook} />
           <Route path="/bookshelf" component={Bookshelf} />
-          <Route path="/book-details" component={BookDetails} />
+          <Route path="/book-details/:id" component={BookDetails} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

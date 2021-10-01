@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import Footer from './blocks/Footer';
+import Header from './blocks/Header';
 
 class ErrorBoundary extends Component {
   constructor(props) {
