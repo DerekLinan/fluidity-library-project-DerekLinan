@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import BookCard from '../blocks/BookCard';
 import '../styles/bookshelf.scss';
 import { loadBooks } from '../scripts/Utils';
-import axios from 'axios';
 
 const Bookshelf = () => {
   const [bookList, setBooks] = useState([]);
@@ -11,10 +10,9 @@ const Bookshelf = () => {
     loadBooks()
       .then(({ data: books }) => {
         setBooks(books);
-        console.log(books);
       })
       .catch((e) => {
-        console.log(e);
+        throw new Error(e);
       });
   }, []);
 

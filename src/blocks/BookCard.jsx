@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../styles/blocks/_book-card.scss';
+import { useHistory } from 'react-router';
 
 const BookCard = ({ id, author, title, synopsis, image }) => {
   return (
@@ -32,6 +33,7 @@ BookCard.defaultProps = {
 };
 
 BookCard.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string,
   author: PropTypes.string,
   synopsis: PropTypes.string,
