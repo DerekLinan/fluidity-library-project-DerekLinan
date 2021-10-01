@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Landing from '../blocks/Landing';
 
 const Index = () => {
@@ -14,9 +15,11 @@ const Index = () => {
             nostrum voluptate dicta.
           </p>
         </section>
-        <button type="button" className="button">
-          See Books
-        </button>
+        <Link to="/bookshelf">
+          <button type="button" className="button">
+            See Books
+          </button>
+        </Link>
         <section className="section">
           <p className="section__text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
@@ -24,9 +27,11 @@ const Index = () => {
             nostrum.
           </p>
         </section>
-        <button type="button" className="button">
-          Add a Book
-        </button>
+        <Link to="/add-book">
+          <button type="button" className="button">
+            Add a Book
+          </button>
+        </Link>
       </main>
     </>
   );
