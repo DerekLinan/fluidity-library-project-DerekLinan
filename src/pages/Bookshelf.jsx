@@ -24,7 +24,8 @@ const Bookshelf = () => {
           <div className="bookshelf">
             {bookList.map(({ id, title, image, author, synopsis }) => (
               <BookCard
-                id={id + title}
+                key={id + title}
+                id={id}
                 author={author}
                 title={title}
                 image={image}

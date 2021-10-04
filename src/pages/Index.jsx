@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Landing from '../blocks/Landing';
 
 const Index = () => {
+  const history = useHistory();
+
   return (
     <>
       <Landing />
@@ -15,11 +17,15 @@ const Index = () => {
             nostrum voluptate dicta.
           </p>
         </section>
-        <Link to="/bookshelf">
-          <button type="button" className="button">
-            See Books
-          </button>
-        </Link>
+
+        <button
+          onClick={() => history.push('/bookshelf')}
+          type="button"
+          className="button"
+        >
+          See Books
+        </button>
+
         <section className="section">
           <p className="section__text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
@@ -27,11 +33,14 @@ const Index = () => {
             nostrum.
           </p>
         </section>
-        <Link to="/add-book">
-          <button type="button" className="button">
-            Add a Book
-          </button>
-        </Link>
+
+        <button
+          onClick={() => history.push('/add-book')}
+          type="button"
+          className="button"
+        >
+          Add a Book
+        </button>
       </main>
     </>
   );

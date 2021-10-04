@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <h1 className="header__title">The Library</h1>
 
       <FontAwesomeIcon icon={faBars} className="nav-icon" />
@@ -37,7 +37,7 @@ const Header = () => {
           Search
         </button>
       </div>
-    </div>
+    </header>
   );
 };
 
