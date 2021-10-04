@@ -3,7 +3,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 import '../styles/header.scss';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -15,15 +15,15 @@ const Header = () => {
 
       <nav className="navbar">
         <ul className="navbar__ul">
-          <Link to="/" className="navbar__li navbar__li--selected">
+          <NavLink exact to="/" key="home" className="navbar__li">
             Home
-          </Link>
-          <Link to="/bookshelf" className="navbar__li">
+          </NavLink>
+          <NavLink to="/bookshelf" key="bookshelf" className="navbar__li">
             Bookshelf
-          </Link>
-          <Link to="/add-book" className="navbar__li">
+          </NavLink>
+          <NavLink to="/add-book" key="addbook" className="navbar__li">
             Add Book
-          </Link>
+          </NavLink>
         </ul>
       </nav>
 

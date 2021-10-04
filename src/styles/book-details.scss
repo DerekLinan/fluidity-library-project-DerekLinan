@@ -19,8 +19,13 @@
 
   @media (max-width: $mobileWidthMax) {
     flex-direction: column;
+    &__info > .section__header {
+      white-space: nowrap;
+      width: 95vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
-
   .label-before::before {
     display: none;
     content: 'Rating';
