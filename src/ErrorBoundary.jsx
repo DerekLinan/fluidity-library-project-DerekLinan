@@ -23,10 +23,11 @@ class ErrorBoundary extends Component {
 
     if (error) {
       return (
-        <Header>
+        <>
+          <Header />
           <h1>Error has occurred.</h1>
           <Footer />
-        </Header>
+        </>
       );
     }
 
