@@ -7,11 +7,10 @@ import '../styles/blocks/_rating.scss';
 
 const BookDetails = () => {
   const { id } = useParams();
-  const [book, setBook] = useState([]);
+  const [book, setBook] = useState({});
   useEffect(() => {
     loadBook(id)
       .then(({ data: bookData }) => {
-        console.log(bookData);
         setBook(bookData);
       })
       .catch((e) => {
@@ -19,9 +18,7 @@ const BookDetails = () => {
       });
   }, []);
 
-  // const [title, image, author, rating, synopsis, pages, published] = {
-  //   book,
-  // };
+  const { title, image, author, rating, synopsis, pages, published } = book;
 
   return (
     <>
@@ -32,19 +29,19 @@ const BookDetails = () => {
               <img
                 className="book-card__img"
                 crossOrigin="anonymous"
-                src={book.image}
-                alt={`${book.title}'s cover`}
+                src={image}
+                alt={`${title}'s cover`}
               />
               <div className="label-before">
-                <Rating rating={book.rating} />
+                <Rating rating={rating} />
               </div>
             </div>
             <div className="book-details__info">
-              <h1 className="section__header">{book.title}</h1>
-              <h2 className="section__h2">{book.author}</h2>
-              <h3 className="section__h3">{`Published: ${book.published}`}</h3>
-              <h3 className="section__h3">{`${book.pages} pages`}</h3>
-              <p className="section__text">{book.synopsis}</p>
+              <h1 className="section__header">{title}</h1>
+              <h2 className="section__h2">{author}</h2>
+              <h3 className="section__h3">{`Published: ${published}`}</h3>
+              <h3 className="section__h3">{`${pages} pages`}</h3>
+              <p className="section__text">{synopsis}</p>
             </div>
           </div>
           <div className="button-group">
