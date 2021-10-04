@@ -64,6 +64,10 @@
     color: $invertedTextColor;
   }
 
+  .active {
+    color: $invertedTextColor;
+  }
+
   &__ul {
     display: flex;
     flex-direction: row;
