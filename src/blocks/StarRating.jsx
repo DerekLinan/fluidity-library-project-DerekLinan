@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarOutline } from '@fortawesome/free-regular-svg-icons';
 
-function display(star, rating) {
+const display = (star, rating) => {
   const classes = rating ? 'rating__star' : 'rating__star--empty';
 
   if (star - 0.5 === rating - 0) {
@@ -14,10 +14,9 @@ function display(star, rating) {
   if (star <= rating)
     return <FontAwesomeIcon icon={faStar} className={classes} />;
   return <FontAwesomeIcon icon={faStarOutline} className={classes} />;
-}
+};
 
-const StarRating = (props) => {
-  const { rating, onChange } = props;
+const StarRating = ({ rating, onChange }) => {
   const [currentRating, setRating] = useState(rating);
   const [displayRating, setDisplay] = useState(currentRating);
 
@@ -205,6 +204,6 @@ StarRating.defaultProps = {
 };
 
 StarRating.propTypes = {
-  rating: PropTypes.number,
+  rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onChange: PropTypes.func,
 };

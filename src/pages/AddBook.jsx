@@ -26,6 +26,12 @@ const AddBook = () => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    const titleInput = bookData.title.trim();
+    const authorInput = bookData.author.trim();
+
+    if (!(titleInput && authorInput))
+      return alert('Must include at least a title and author to add book');
+
     addBook(bookData)
       .then(() => {
         history.push('/bookshelf');
@@ -109,7 +115,11 @@ const AddBook = () => {
             <button className="button" type="submit">
               Add Book
             </button>
-            <button className="button button--secondary-color" type="button">
+            <button
+              className="button button--secondary-color"
+              type="button"
+              onClick={() => history.push('/bookshelf')}
+            >
               Cancel
             </button>
           </div>
