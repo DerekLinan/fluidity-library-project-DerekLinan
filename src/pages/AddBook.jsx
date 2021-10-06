@@ -24,23 +24,23 @@ const AddBook = () => {
     }
   };
 
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    addBook(bookData)
+      .then(() => {
+        history.push('/bookshelf');
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  };
+
   return (
     <main className="main">
       <section className="section">
         <h1 className="section__header">Add Book</h1>
 
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            addBook(bookData)
-              .then(() => {
-                history.push('/bookshelf');
-              })
-              .catch((error) => {
-                throw new Error(error);
-              });
-          }}
-        >
+        <form onSubmit={(e) => handleOnSubmit(e)}>
           <div className="layout-block">
             <p className="section__text add-title">Title</p>
             <input
