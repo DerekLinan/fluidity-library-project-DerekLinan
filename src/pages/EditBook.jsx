@@ -1,4 +1,4 @@
-import Rating from '../blocks/Rating';
+import StarRating from '../blocks/StarRating';
 
 const EditBook = () => {
   return (
@@ -38,7 +38,7 @@ const EditBook = () => {
             <input className="input__field add-pages-field" type="number" />
 
             <label className="section__text add-rating">Rating</label>
-            <Rating />
+            <StarRating />
           </div>
 
           <div className="button-group">

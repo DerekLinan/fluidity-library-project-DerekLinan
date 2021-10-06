@@ -19,7 +19,6 @@ const AddBook = () => {
   const { title, author, image, synopsis, published, pages, rating } = bookData;
 
   const dataChanged = (key, event) => {
-    console.log(event.target.value);
     if (typeof key === 'string') {
       setBookData((prevData) => ({ ...prevData, [key]: event.target.value }));
     }
@@ -103,6 +102,7 @@ const AddBook = () => {
               <StarRating
                 onChange={(newRating) => dataChanged('rating', newRating)}
                 value={rating}
+                rating={rating}
               />
             </div>
 

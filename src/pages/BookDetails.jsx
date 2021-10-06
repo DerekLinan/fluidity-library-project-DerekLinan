@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { loadBook } from '../scripts/Utils';
-import Rating from '../blocks/Rating';
+import StarRating from '../blocks/StarRating';
 import '../styles/book-details.scss';
-import '../styles/blocks/_rating.scss';
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -33,7 +32,7 @@ const BookDetails = () => {
                 alt={`${title}'s cover`}
               />
               <div className="label-before">
-                <Rating rating={rating} />
+                <StarRating rating={rating} />
               </div>
             </div>
             <div className="book-details__info">
