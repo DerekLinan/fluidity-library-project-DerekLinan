@@ -6,7 +6,13 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarOutline } from '@fortawesome/free-regular-svg-icons';
 
 function display(star, rating, modName = '') {
-  const classes = modName ? `rating__star ${modName}` : 'rating__star';
+  let classes;
+  if (rating) {
+    classes = modName ? `rating__star ${modName}` : 'rating__star';
+  } else {
+    classes = 'rating__star--empty';
+  }
+
   if (star - 0.5 === rating - 0) {
     return <FontAwesomeIcon icon={faStarHalfAlt} className={classes} />;
   }
@@ -19,7 +25,7 @@ const StarRating = (props) => {
   const [currentRating, setRating] = useState(rating);
   const [displayRating, setDisplay] = useState(currentRating);
 
-  useEffect(() => {}, [currentRating, displayRating]);
+  useEffect(() => {}, [currentRating]);
 
   useEffect(() => {
     setRating(rating);
@@ -32,11 +38,19 @@ const StarRating = (props) => {
     }
   };
 
+  const changeDisplay = (val) => {
+    if (onChange) {
+      setDisplay(val);
+    }
+  };
+
   return (
     <div className="add-rating-field">
       <div className="rating" form="rating">
         <div className="rating__display-1">
-          {display(1, currentRating)}
+          {displayRating
+            ? display(1, displayRating)
+            : display(1, currentRating)}
           <label className="rating__label rating__left" htmlFor="rating-1">
             <input
               className="rating__input"
@@ -46,6 +60,8 @@ const StarRating = (props) => {
               value="0.5"
               checked={currentRating === '0.5'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(0.5)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
           <label className="rating__label rating__right" htmlFor="rating-2">
@@ -57,12 +73,14 @@ const StarRating = (props) => {
               value="1"
               checked={currentRating === '1'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(1)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
         </div>
 
         <div className="rating__display-2">
-          {display(2, currentRating)}
+          {display(2, displayRating || currentRating)}
           <label className="rating__label rating__left" htmlFor="rating">
             <input
               className="rating__input"
@@ -72,6 +90,8 @@ const StarRating = (props) => {
               value="1.5"
               checked={currentRating === '1.5'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(1.5)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
           <label className="rating__label rating__right" htmlFor="rating">
@@ -83,12 +103,14 @@ const StarRating = (props) => {
               value="2"
               checked={currentRating === '2'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(2)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
         </div>
 
         <div className="rating__display-3">
-          {display(3, currentRating)}
+          {display(3, displayRating || currentRating)}
           <label className="rating__label rating__left" htmlFor="rating">
             <input
               className="rating__input"
@@ -98,6 +120,8 @@ const StarRating = (props) => {
               value="2.5"
               checked={currentRating === '2.5'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(2.5)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
           <label className="rating__label rating__right" htmlFor="rating">
@@ -109,12 +133,14 @@ const StarRating = (props) => {
               value="3"
               checked={currentRating === '3'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(3)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
         </div>
 
         <div className="rating__display-4">
-          {display(4, currentRating)}
+          {display(4, displayRating || currentRating)}
           <label className="rating__label rating__left" htmlFor="rating">
             <input
               className="rating__input"
@@ -124,6 +150,8 @@ const StarRating = (props) => {
               value="3.5"
               checked={currentRating === '3.5'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(3.5)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
           <label className="rating__label rating__right" htmlFor="rating">
@@ -135,12 +163,14 @@ const StarRating = (props) => {
               value="4"
               checked={currentRating === '4'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(4)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
         </div>
 
         <div className="rating__display-5">
-          {display(5, currentRating)}
+          {display(5, displayRating || currentRating)}
           <label className="rating__label rating__left" htmlFor="rating">
             <input
               className="rating__input"
@@ -150,6 +180,8 @@ const StarRating = (props) => {
               value="4.5"
               checked={currentRating === '4.5'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(4.5)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
           <label className="rating__label rating__right" htmlFor="rating">
@@ -161,6 +193,8 @@ const StarRating = (props) => {
               value="5"
               checked={currentRating === '5'}
               onChange={ratingChanged}
+              onMouseEnter={() => changeDisplay(5)}
+              onMouseLeave={() => changeDisplay(0)}
             />
           </label>
         </div>
