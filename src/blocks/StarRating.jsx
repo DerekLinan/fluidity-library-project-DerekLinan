@@ -5,13 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarOutline } from '@fortawesome/free-regular-svg-icons';
 
-function display(star, rating, modName = '') {
-  let classes;
-  if (rating) {
-    classes = modName ? `rating__star ${modName}` : 'rating__star';
-  } else {
-    classes = 'rating__star--empty';
-  }
+function display(star, rating) {
+  const classes = rating ? 'rating__star' : 'rating__star--empty';
 
   if (star - 0.5 === rating - 0) {
     return <FontAwesomeIcon icon={faStarHalfAlt} className={classes} />;
@@ -20,6 +15,7 @@ function display(star, rating, modName = '') {
     return <FontAwesomeIcon icon={faStar} className={classes} />;
   return <FontAwesomeIcon icon={faStarOutline} className={classes} />;
 }
+
 const StarRating = (props) => {
   const { rating, onChange } = props;
   const [currentRating, setRating] = useState(rating);
@@ -48,9 +44,7 @@ const StarRating = (props) => {
     <div className="add-rating-field">
       <div className="rating" form="rating">
         <div className="rating__display-1">
-          {displayRating
-            ? display(1, displayRating)
-            : display(1, currentRating)}
+          {display(1, displayRating || currentRating)}
           <label className="rating__label rating__left" htmlFor="rating-1">
             <input
               className="rating__input"
