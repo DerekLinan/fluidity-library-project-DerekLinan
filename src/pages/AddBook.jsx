@@ -2,6 +2,28 @@ import '../styles/add-book.scss';
 import Rating from '../blocks/Rating';
 
 const AddBook = () => {
+<<<<<<< Updated upstream
+=======
+  const history = useHistory();
+  const [bookData, setBookData] = useState({
+    title: '',
+    author: '',
+    image: '',
+    synopsis: '',
+    published: '',
+    pages: 0,
+    rating: 0,
+  });
+
+  const { title, author, image, synopsis, published, pages, rating } = bookData;
+
+  const dataChanged = (key, event) => {
+    if (typeof key === 'string') {
+      setBookData((prevData) => ({ ...prevData, [key]: event.target.value }));
+    }
+  };
+
+>>>>>>> Stashed changes
   return (
     <>
       <main className="main">
@@ -38,9 +60,19 @@ const AddBook = () => {
             <label className="section__text add-pages">Pages</label>
             <input className="input__field add-pages-field" type="number" />
 
+<<<<<<< Updated upstream
             <label className="section__text add-rating">Rating</label>
             <Rating />
           </div>
+=======
+              <p className="section__text add-rating">Rating</p>
+              <StarRating
+                onChange={(newRating) => dataChanged('rating', newRating)}
+                value={rating}
+                rating={rating}
+              />
+            </div>
+>>>>>>> Stashed changes
 
           <div className="button-group">
             <button className="button">Add Book</button>
