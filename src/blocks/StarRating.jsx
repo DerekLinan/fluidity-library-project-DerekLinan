@@ -11,16 +11,15 @@ const display = (star, rating) => {
   if (star - 0.5 === rating - 0) {
     return <FontAwesomeIcon icon={faStarHalfAlt} className={classes} />;
   }
-  if (star <= rating)
+  if (star <= rating) {
     return <FontAwesomeIcon icon={faStar} className={classes} />;
+  }
   return <FontAwesomeIcon icon={faStarOutline} className={classes} />;
 };
 
 const StarRating = ({ rating, onChange }) => {
   const [currentRating, setRating] = useState(rating);
   const [displayRating, setDisplay] = useState(currentRating);
-
-  useEffect(() => {}, [currentRating]);
 
   useEffect(() => {
     setRating(rating);
