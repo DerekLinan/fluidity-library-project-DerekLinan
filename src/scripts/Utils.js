@@ -14,3 +14,8 @@ export const loadBook = (id) => {
 export const addBook = (data) => {
   return axios.post(local, data);
 };
+
+export const deleteBook = (id) => {
+  const target = `${local}/${id}`;
+  return axios.delete(target);
+};

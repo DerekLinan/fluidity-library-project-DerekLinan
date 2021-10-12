@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { loadBook } from '../scripts/Utils';
+import { useHistory, useParams } from 'react-router-dom';
+import { loadBook, deleteBook } from '../scripts/Utils';
 import StarRating from '../blocks/StarRating';
 import '../styles/book-details.scss';
 
@@ -18,6 +18,16 @@ const BookDetails = () => {
   }, []);
 
   const { title, image, author, rating, synopsis, pages, published } = book;
+
+  const history = useHistory();
+
+  const removeBook = () => {
+    deleteBook(id)
+      .then(history.push('/bookshelf'))
+      .catch((e) => {
+        throw new Error(e);
+      });
+  };
 
   return (
     <main className="main">
@@ -43,13 +53,25 @@ const BookDetails = () => {
           </div>
         </div>
         <div className="button-group">
-          <button className="button" type="button">
+          <button
+            onClick={() => history.push(`/edit-book/${id}`)}
+            className="button"
+            type="button"
+          >
             Edit This Book
           </button>
-          <button className="button button--secondary-color" type="button">
+          <button
+            onClick={() => history.push('/bookshelf')}
+            className="button button--secondary-color"
+            type="button"
+          >
             Back to Shelf
           </button>
-          <button className="button button--danger-color" type="button">
+          <button
+            onClick={() => removeBook()}
+            className="button button--danger-color"
+            type="button"
+          >
             Delete Book
           </button>
         </div>
