@@ -41,7 +41,7 @@ const StarRating = ({ rating, onChange }) => {
   const starDisplay = (star) => {
     const pos = ['left', 'right'];
     return (
-      <div className={`rating__display-${star}`}>
+      <div key={`display${star}${pos}`} className={`rating__display-${star}`}>
         {display(star, displayRating || currentRating)}
         {pos.map((text, index) => (
           <label

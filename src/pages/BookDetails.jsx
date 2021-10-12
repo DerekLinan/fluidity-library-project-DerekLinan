@@ -49,6 +49,9 @@ const BookDetails = () => {
           <button className="button button--secondary-color" type="button">
             Back to Shelf
           </button>
+          <button className="button button--danger-color" type="button">
+            Delete Book
+          </button>
         </div>
       </section>
     </main>
