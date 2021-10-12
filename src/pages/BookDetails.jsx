@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { loadBook, deleteBook } from '../scripts/Utils';
 import StarRating from '../blocks/StarRating';
 import '../styles/book-details.scss';
+import noCover from '../images/no-cover.png';
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const BookDetails = () => {
       .catch((e) => {
         throw new Error(e);
       });
-  }, []);
+  }, [id]);
 
   const { title, image, author, rating, synopsis, pages, published } = book;
 
@@ -23,7 +24,7 @@ const BookDetails = () => {
 
   const removeBook = () => {
     deleteBook(id)
-      .then(history.push('/bookshelf'))
+      .then(() => history.push('/bookshelf'))
       .catch((e) => {
         throw new Error(e);
       });
@@ -37,7 +38,7 @@ const BookDetails = () => {
             <img
               className="book-card__img"
               crossOrigin="anonymous"
-              src={image}
+              src={image || noCover}
               alt={`${title}'s cover`}
             />
             <div className="label-before">

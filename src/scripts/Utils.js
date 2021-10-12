@@ -7,8 +7,7 @@ export const loadBooks = () => {
 };
 
 export const loadBook = (id) => {
-  const target = `${local}/${id}`;
-  return axios.get(target);
+  return axios.get(`${local}/${id}`);
 };
 
 export const addBook = (data) => {
@@ -16,6 +15,5 @@ export const addBook = (data) => {
 };
 
 export const deleteBook = (id) => {
-  const target = `${local}/${id}`;
-  return axios.delete(target);
+  return axios.delete(`${local}/${id}`);
 };

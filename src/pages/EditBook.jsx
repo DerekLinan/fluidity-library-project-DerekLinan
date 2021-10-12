@@ -1,4 +1,5 @@
 import StarRating from '../blocks/StarRating';
+import noCover from '../images/no-cover.png';
 
 const EditBook = () => {
   return (
@@ -19,7 +20,7 @@ const EditBook = () => {
             <input className="input__field add-author-field" type="text" />
 
             <div className="book-cover">
-              <img className="book-cover__image" />
+              <img className="book-cover__image" src={noCover} />
               <p className="book-cover__text">Add Image</p>
             </div>
             <button className="button grid--reposition">Add Image</button>
