@@ -3,7 +3,6 @@
 @use './blocks/book-card';
 @use './blocks/section';
 @use './blocks/button';
-@use './blocks/rating';
 
 @import './abstracts/spacing';
 @import './abstracts/colors';
@@ -83,6 +82,10 @@
 
         &__h2 {
           margin-top: -1em;
+          white-space: nowrap;
+          width: 95vw;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         &__h2:first-of-type::after {

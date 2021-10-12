@@ -10,3 +10,7 @@ export const loadBook = (id) => {
   const target = `${local}/${id}`;
   return axios.get(target);
 };
+
+export const addBook = (data) => {
+  return axios.post(local, data);
+};

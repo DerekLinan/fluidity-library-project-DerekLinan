@@ -1,0 +1,87 @@
+@import '../abstracts/colors';
+@import '../abstracts/spacing';
+
+@mixin block-default {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+@mixin font-size {
+  font-size: $inputHeight * 0.5 - 0.1em;
+}
+
+.rating {
+  color: $primaryTextColor;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: $inputHeight * 0.5;
+  width: $inputHeight * 0.5 * 5;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    height: $inputHeight * 0.65;
+  }
+
+  &__star {
+    color: $ratingFilledColor;
+  }
+
+  &__star--empty {
+    color: $ratingEmptyColor;
+  }
+
+  &__display-1 {
+    @include block-default;
+    @include font-size;
+    left: 0%;
+    right: 80%;
+  }
+  &__display-2 {
+    @include block-default;
+    @include font-size;
+    left: 20%;
+    right: 60%;
+  }
+  &__display-3 {
+    @include block-default;
+    @include font-size;
+    left: 40%;
+    right: 40%;
+  }
+  &__display-4 {
+    @include block-default;
+    @include font-size;
+    left: 60%;
+    right: 20%;
+  }
+  &__display-5 {
+    @include block-default;
+    @include font-size;
+    left: 80%;
+    right: 0;
+  }
+
+  &__left {
+    @include font-size;
+    @include block-default;
+    opacity: 0%;
+    left: 0px;
+  }
+
+  &__right {
+    @include font-size;
+    @include block-default;
+    opacity: 0%;
+    right: 0px;
+  }
+}
