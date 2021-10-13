@@ -1,104 +1,114 @@
 {
-   "books":[
-      {
-         "id":1,
-         "title":"Eragon",
-         "author":"Christopher Paolini",
-         "synopsis":"A Shade named Durza, along with a group of Urgals, ambushes a party od three elves. They kill two of them, and Durza attempts to steal an egg carried by the remaining female elf, but she uses magic to teleport it elsewhere.",
-         "published":"2002-08-26",
-         "pages":544,
-         "rating":3.5,
-         "image":"https://upload.wikimedia.org/wikipedia/en/c/ce/Eragon_book_cover.png"
-      },
-      {
-         "id":2,
-         "title":"Eldest",
-         "author":"Christopher Paolini",
-         "synopsis":"Eldest begins three days after the events of the preceding novel, Eragon, in the dwarf city of Tronjheim, inside of a hollowed mountain named Farthen Dur. Eldest begins as Ajihad, the king of the rebel Varden force, is ambushed and killed while The Twins and Murtagh are assumed dead. Ajihad's daughter Nasuada is elected to command the Varden, and decides to move them to Surda and oppose the Empire openly.",
-         "published":"2005-08-23",
-         "pages":694,
-         "rating":4,
-         "image":"https://upload.wikimedia.org/wikipedia/en/e/e0/Eldest_book_cover.png"
-      },
-      {
-         "id":3,
-         "title":"Brisingr",
-         "author":"Christopher Paolini",
-         "synopsis":"Eragon, Saphira, and Roran travel to Helgrind, the home of the Ra'zac. There, they rescue Roran's betrothed, Katrina, held prisoner there, and kill one of the Ra'zac. Saphira, Roran, and Katrina return to the Varden, while Eragon stays behind. Eragon slays the remaining Ra'zac, who warns him that Galbatorix has discovered the name. Eragon also finds and condemns Sloan, Katrina's treacherous father, to never meet his daughter again, and arranges for him to travel to Ellesmera, the elven homeland.",
-         "published":"2008-09-20",
-         "pages":831,
-         "rating":4.5,
-         "image":"https://upload.wikimedia.org/wikipedia/en/7/70/Brisingr_book_cover.png"
-      },
-      {
-         "id":4,
-         "title":"Inheritance",
-         "author":"Christopher Paolini",
-         "synopsis":"The Varden attack the Empire city of Belatona. In the battle, Saphira, Eragon's dragon, is nearly killed by a Dauthdaert, a spear from the Dragon Wars that can bypass magical wards and kill dragons. Belatona is captured by the Varden, and an alliance is later formed between the Varden and the werecats.",
-         "published":"2011-11-08",
-         "pages":860,
-         "rating":5,
-         "image":"https://upload.wikimedia.org/wikipedia/en/2/2b/Inheritance2011.JPG"
-      },
-      {
-         "id":5,
-         "title":"Uncle John's Bathroom Reader",
-         "author":"Bathroom Reader's Institute",
-         "synopsis":"At last...Here it is...The book you've been waiting for! No more frantic searches at the last minute for that perfect magazine article. No agonizing choices between light reading and the serious stuff. This little volume has it all: Entertainment, humor, education, trivia, science, history, pop culture...and more! And it's even divided by length--you can spend a minute with the Quickies, relax with Normal-length articles, or really get comfortable with Long Items.",
-         "published":"1988-11-15",
-         "pages":224,
-         "rating":4.3,
-         "image":"https://images-na.ssl-images-amazon.com/images/I/51mqmIlcxkL._SX322_BO1,204,203,200_.jpg"
-      },
-      {
-         "id":6,
-         "title":"Uncle John's Hindsight is 20/20 Bathroom Reader",
-         "author":"Bathroom Reader's Institute",
-         "synopsis":"This 34th annual edition of Uncle John’s Bathroom Reader offers an all-new collection of fascinating trivia, strange-but-true oddities, and the ever-popular stories of dumb crooks!",
-         "published":"2021-09-07",
-         "pages":416,
-         "rating":2.2,
-         "image":"https://images-na.ssl-images-amazon.com/images/I/51z0LcOOVQS._SX339_BO1,204,203,200_.jpg"
-      },
-      {
-         "id":7,
-         "title":"Learn Javascript Quickly",
-         "author":"Code Quickly",
-         "synopsis":"Don’t let the fact that you’ve never programmed before stop you from having a highly profitable career, JavaScript is the simplest programming language anyone can learn. We all start somewhere, but you first need to make sure you start out on the right foot and equip yourself with the best tools of the trade.",
-         "published":"2020-11-10",
-         "pages":174,
-         "rating":0,
-         "image":"https://images-na.ssl-images-amazon.com/images/I/41SVTBTm1oL._SX384_BO1,204,203,200_.jpg"
-      },
-      {
-         "id":8,
-         "title":"Introduction to Algorithms",
-         "author":"Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
-         "synopsis":"This internationally acclaimed textbook provides a comprehensive introduction to the modern study of computer algorithms. It covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively selfcontained and presents an algorithm, a design technique, an application area, or a related topic. The algorithms are described and designed in a manner to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor.",
-         "published":"2010-02-02",
-         "pages":1312,
-         "rating":5,
-         "image":"https://images-na.ssl-images-amazon.com/images/I/513P8XoCAEL._SX376_BO1,204,203,200_.jpg"
-      },
-      {
-         "id":9,
-         "title":"Proofs: A Long-Form Mathematics Textbook",
-         "author":"Jay Cummings",
-         "synopsis":"This textbook is designed for students. Rather than the typical definition-theorem-proof-repeat style, this text includes much more commentary, motivation and explanation. The proofs are not terse, and aim for understanding over economy. Furthermore, dozens of proofs are preceded by \"scratch work\" or a proof sketch to give students a big-picture view and an explanation of how they would come up with it on their own.This book covers intuitive proofs, direct proofs, sets, induction, logic, the contrapositive, contradiction, functions and relations. The text aims to make the ideas visible, and contains over 200 illustrations. The writing is relaxed and conversational, and includes periodic attempts at humor.This text is also an introduction to higher mathematics.",
-         "published":"2021-01-19",
-         "pages":511,
-         "rating":4.9,
-         "image":"https://images-na.ssl-images-amazon.com/images/I/31vkYOOmDUL._SX218_BO1,204,203,200_QL40_ML2_.jpg"
-      },
-      {
-         "id":10,
-         "title":"Riddles for Adults: Level: Medium",
-         "author":"Jayde Nguyen",
-         "synopsis":"Level: Medium Over 950 Challenging riddles that twist your mind. Do you like riddles? Do you like brain teasers? Do you like puzzles? Are you a problem solver? Are you creative? Do you think outside the box? If you can answer yes to any of these questions, this book may be perfect for you. Introducing a collection of the best riddles, puzzles, and brain teasers that has been years in the making. These will challenge the way you think, introduce you to new ways to look at problems, and expand your mind.",
-         "published":"2020-08-28",
-         "pages":82,
-         "rating":3,
-         "image":"https://images-na.ssl-images-amazon.com/images/I/41CvysaeWDL._SX331_BO1,204,203,200_.jpg"
-      }
-   ]
+  "books": [
+    {
+      "id": 1,
+      "title": "Eragon",
+      "author": "Christopher Paolini",
+      "synopsis": "A Shade named Durza, along with a group of Urgals, ambushes a party od three elves. They kill two of them, and Durza attempts to steal an egg carried by the remaining female elf, but she uses magic to teleport it elsewhere.",
+      "published": "2002-08-26",
+      "pages": 544,
+      "rating": 3.5,
+      "image": "https://upload.wikimedia.org/wikipedia/en/c/ce/Eragon_book_cover.png"
+    },
+    {
+      "id": 2,
+      "title": "Eldest",
+      "author": "Christopher Paolini",
+      "synopsis": "Eldest begins three days after the events of the preceding novel, Eragon, in the dwarf city of Tronjheim, inside of a hollowed mountain named Farthen Dur. Eldest begins as Ajihad, the king of the rebel Varden force, is ambushed and killed while The Twins and Murtagh are assumed dead. Ajihad's daughter Nasuada is elected to command the Varden, and decides to move them to Surda and oppose the Empire openly.",
+      "published": "2005-08-23",
+      "pages": 694,
+      "rating": 4,
+      "image": "https://upload.wikimedia.org/wikipedia/en/e/e0/Eldest_book_cover.png"
+    },
+    {
+      "id": 3,
+      "title": "Brisingr",
+      "author": "Christopher Paolini",
+      "synopsis": "Eragon, Saphira, and Roran travel to Helgrind, the home of the Ra'zac. There, they rescue Roran's betrothed, Katrina, held prisoner there, and kill one of the Ra'zac. Saphira, Roran, and Katrina return to the Varden, while Eragon stays behind. Eragon slays the remaining Ra'zac, who warns him that Galbatorix has discovered the name. Eragon also finds and condemns Sloan, Katrina's treacherous father, to never meet his daughter again, and arranges for him to travel to Ellesmera, the elven homeland.",
+      "published": "2008-09-20",
+      "pages": 831,
+      "rating": 4.5,
+      "image": "https://upload.wikimedia.org/wikipedia/en/7/70/Brisingr_book_cover.png"
+    },
+    {
+      "id": 4,
+      "title": "Inheritance",
+      "author": "Christopher Paolini",
+      "synopsis": "The Varden attack the Empire city of Belatona. In the battle, Saphira, Eragon's dragon, is nearly killed by a Dauthdaert, a spear from the Dragon Wars that can bypass magical wards and kill dragons. Belatona is captured by the Varden, and an alliance is later formed between the Varden and the werecats.",
+      "published": "2011-11-08",
+      "pages": 860,
+      "rating": 5,
+      "image": "https://upload.wikimedia.org/wikipedia/en/2/2b/Inheritance2011.JPG"
+    },
+    {
+      "id": 5,
+      "title": "Uncle John's Bathroom Reader",
+      "author": "Bathroom Reader's Institute",
+      "synopsis": "At last...Here it is...The book you've been waiting for! No more frantic searches at the last minute for that perfect magazine article. No agonizing choices between light reading and the serious stuff. This little volume has it all: Entertainment, humor, education, trivia, science, history, pop culture...and more! And it's even divided by length--you can spend a minute with the Quickies, relax with Normal-length articles, or really get comfortable with Long Items.",
+      "published": "1988-11-15",
+      "pages": 224,
+      "rating": 4.3,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51mqmIlcxkL._SX322_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Uncle John's Hindsight is 20/20 Bathroom Reader",
+      "author": "Bathroom Reader's Institute",
+      "synopsis": "This 34th annual edition of Uncle John’s Bathroom Reader offers an all-new collection of fascinating trivia, strange-but-true oddities, and the ever-popular stories of dumb crooks!",
+      "published": "2021-09-07",
+      "pages": 416,
+      "rating": 2.2,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51z0LcOOVQS._SX339_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Learn Javascript Quickly",
+      "author": "Code Quickly",
+      "synopsis": "Don’t let the fact that you’ve never programmed before stop you from having a highly profitable career, JavaScript is the simplest programming language anyone can learn. We all start somewhere, but you first need to make sure you start out on the right foot and equip yourself with the best tools of the trade.",
+      "published": "2020-11-10",
+      "pages": 174,
+      "rating": 0,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41SVTBTm1oL._SX384_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Introduction to Algorithms",
+      "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+      "synopsis": "This internationally acclaimed textbook provides a comprehensive introduction to the modern study of computer algorithms. It covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively selfcontained and presents an algorithm, a design technique, an application area, or a related topic. The algorithms are described and designed in a manner to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor.",
+      "published": "2010-02-02",
+      "pages": 1312,
+      "rating": 5,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/513P8XoCAEL._SX376_BO1,204,203,200_.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Proofs: A Long-Form Mathematics Textbook",
+      "author": "Jay Cummings",
+      "synopsis": "This textbook is designed for students. Rather than the typical definition-theorem-proof-repeat style, this text includes much more commentary, motivation and explanation. The proofs are not terse, and aim for understanding over economy. Furthermore, dozens of proofs are preceded by \"scratch work\" or a proof sketch to give students a big-picture view and an explanation of how they would come up with it on their own.This book covers intuitive proofs, direct proofs, sets, induction, logic, the contrapositive, contradiction, functions and relations. The text aims to make the ideas visible, and contains over 200 illustrations. The writing is relaxed and conversational, and includes periodic attempts at humor.This text is also an introduction to higher mathematics.",
+      "published": "2021-01-19",
+      "pages": 511,
+      "rating": 4.9,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/31vkYOOmDUL._SX218_BO1,204,203,200_QL40_ML2_.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Riddles for Adults: Level: Medium",
+      "author": "Jayde Nguyen",
+      "synopsis": "Level: Medium Over 950 Challenging riddles that twist your mind. Do you like riddles? Do you like brain teasers? Do you like puzzles? Are you a problem solver? Are you creative? Do you think outside the box? If you can answer yes to any of these questions, this book may be perfect for you. Introducing a collection of the best riddles, puzzles, and brain teasers that has been years in the making. These will challenge the way you think, introduce you to new ways to look at problems, and expand your mind.",
+      "published": "2020-08-28",
+      "pages": 82,
+      "rating": 3,
+      "image": "https://images-na.ssl-images-amazon.com/images/I/41CvysaeWDL._SX331_BO1,204,203,200_.jpg"
+    },
+    {
+      "title": "test title",
+      "author": "test author",
+      "image": "",
+      "synopsis": "",
+      "published": "2020-10-10",
+      "pages": "120",
+      "rating": "3",
+      "id": 11
+    }
+  ]
 }

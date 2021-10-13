@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import StarRating from '../blocks/StarRating';
 import { addBook } from '../scripts/Utils';
+import noCover from '../images/no-cover.png';
 
 const AddBook = () => {
   const history = useHistory();
@@ -71,7 +72,11 @@ const AddBook = () => {
             />
 
             <div className="book-cover">
-              <img className="book-cover__image" src={image} alt="cover" />
+              <img
+                className="book-cover__image"
+                src={image || noCover}
+                alt="cover"
+              />
               <p className="book-cover__text">Add Image</p>
             </div>
             <button className="button grid--reposition" type="button">

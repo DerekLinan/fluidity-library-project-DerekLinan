@@ -7,10 +7,13 @@ export const loadBooks = () => {
 };
 
 export const loadBook = (id) => {
-  const target = `${local}/${id}`;
-  return axios.get(target);
+  return axios.get(`${local}/${id}`);
 };
 
 export const addBook = (data) => {
   return axios.post(local, data);
+};
+
+export const deleteBook = (id) => {
+  return axios.delete(`${local}/${id}`);
 };

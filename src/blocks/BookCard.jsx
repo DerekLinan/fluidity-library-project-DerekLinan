@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../styles/blocks/_book-card.scss';
+import noCover from '../images/no-cover.png';
 
 const BookCard = ({ id, author, title, synopsis, image }) => {
   return (
@@ -9,7 +10,7 @@ const BookCard = ({ id, author, title, synopsis, image }) => {
         <img
           className="book-card__img"
           crossOrigin="anonymous"
-          src={image}
+          src={image || noCover}
           alt={`${title} cover`}
         />
         <h2 className="book-card__title">{title}</h2>
