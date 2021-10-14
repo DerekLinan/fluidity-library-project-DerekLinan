@@ -41,20 +41,18 @@ const Header = () => {
           </NavLink>
         </ul>
       </nav>
-      <div className="searchbar">
-        <form onSubmit={(e) => searchForBooks(e)}>
-          <input
-            className="searchbar__input"
-            type="text"
-            value={searchText}
-            onChange={(e) => changeSearchText(e.target.value)}
-            placeholder="Search by Title/Author"
-          />
-          <button type="submit" className="searchbar__button">
-            Search
-          </button>
-        </form>
-      </div>
+      <form className="searchbar" onSubmit={(e) => searchForBooks(e)}>
+        <input
+          className="searchbar__input"
+          type="text"
+          value={searchText}
+          onChange={(e) => changeSearchText(e.target.value)}
+          placeholder="Search by Title/Author"
+        />
+        <button type="submit" className="searchbar__button">
+          Search
+        </button>
+      </form>
     </header>
   );
 };
