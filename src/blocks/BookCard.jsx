@@ -23,8 +23,6 @@ const BookCard = ({ id, author, title, synopsis, image }) => {
   );
 };
 
-export default BookCard;
-
 BookCard.defaultProps = {
   title: '',
   author: '',
@@ -39,3 +37,5 @@ BookCard.propTypes = {
   synopsis: PropTypes.string,
   image: PropTypes.string,
 };
+
+export default BookCard;

@@ -14,7 +14,7 @@
   margin: $spacingLarge;
 
   @media (max-width: $mobileWidthMax) {
-    height: $bookCoverHeight;
+    height: auto;
     min-width: 5em;
   }
 
@@ -22,6 +22,11 @@
     max-width: $bookCoverWidth;
     max-height: $bookCoverHeight;
     margin: $spacingMedium;
+
+    @media (max-width: $mobileWidthMax) {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   &__text {

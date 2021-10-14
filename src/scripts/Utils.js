@@ -14,6 +14,10 @@ export const addBook = (data) => {
   return axios.post(local, data);
 };
 
+export const editBook = (id, data) => {
+  return axios.put(`${local}/${id}`, data);
+};
+
 export const deleteBook = (id) => {
   return axios.delete(`${local}/${id}`);
 };

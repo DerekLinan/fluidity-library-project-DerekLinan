@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import BookCard from '../blocks/BookCard';
 import '../styles/bookshelf.scss';
 import { loadBooks } from '../scripts/Utils';
+import noCover from '../images/no-cover.png';
 
 const Bookshelf = () => {
   const [bookList, setBooks] = useState([]);
@@ -28,7 +29,7 @@ const Bookshelf = () => {
                 id={id}
                 author={author}
                 title={title}
-                image={image}
+                image={image || noCover}
                 synopsis={synopsis}
               />
             ))}
