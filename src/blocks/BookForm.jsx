@@ -21,10 +21,7 @@ const BookForm = ({ callBackFunc }) => {
   const { title, author, image, synopsis, published, pages, rating } = bookData;
 
   const location = useLocation();
-  let isEditBook = false;
-  if (location.pathname !== '/add-book') {
-    isEditBook = true;
-  }
+  const isEditBook = location.pathname !== '/add-book';
 
   const dataChanged = (key, event) => {
     if (typeof key === 'string') {
@@ -35,14 +32,12 @@ const BookForm = ({ callBackFunc }) => {
   useEffect(() => {
     if (isEditBook) {
       loadBook(id)
-        .then(({ data }) => {
-          setBookData(data);
-        })
+        .then(({ data }) => setBookData(data))
         .catch((e) => {
           throw new Error(e);
         });
     }
-  }, []);
+  }, [isEditBook]);
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -169,8 +164,6 @@ const BookForm = ({ callBackFunc }) => {
   );
 };
 
-export default BookForm;
-
 BookForm.defaultProps = {
   callBackFunc: console.log('No callback'),
 };
@@ -178,3 +171,5 @@ BookForm.defaultProps = {
 BookForm.propTypes = {
   callBackFunc: PropTypes.func,
 };
+
+export default BookForm;

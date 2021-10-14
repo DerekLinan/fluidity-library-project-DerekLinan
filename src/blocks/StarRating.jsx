@@ -76,8 +76,6 @@ const StarRating = ({ rating, onChange }) => {
   );
 };
 
-export default StarRating;
-
 StarRating.defaultProps = {
   rating: 0,
   onChange: null,
@@ -87,3 +85,5 @@ StarRating.propTypes = {
   rating: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   onChange: PropTypes.func,
 };
+
+export default StarRating;
