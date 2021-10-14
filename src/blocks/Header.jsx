@@ -1,11 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
 import '../styles/header.scss';
-
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+import { useState } from 'react';
 
 const Header = () => {
+  const history = useHistory();
+  const [searchText, changeSearchText] = useState('');
+
+  const searchForBooks = (e) => {
+    e.preventDefault();
+    const params = new URLSearchParams('?');
+    params.set('search', searchText.toLowerCase().trim());
+    if (params.get('search')) {
+      return history.push({
+        pathname: '/bookshelf',
+        search: params.toString(),
+      });
+    }
+    return history.push('/bookshelf');
+  };
+
   return (
     <header className="header">
       <h1 className="header__title">The Library</h1>
@@ -26,16 +41,19 @@ const Header = () => {
           </NavLink>
         </ul>
       </nav>
-
       <div className="searchbar">
-        <input
-          className="searchbar__input"
-          type="text"
-          placeholder="Search by Title/Author"
-        />
-        <button type="button" className="searchbar__button">
-          Search
-        </button>
+        <form onSubmit={(e) => searchForBooks(e)}>
+          <input
+            className="searchbar__input"
+            type="text"
+            value={searchText}
+            onChange={(e) => changeSearchText(e.target.value)}
+            placeholder="Search by Title/Author"
+          />
+          <button type="submit" className="searchbar__button">
+            Search
+          </button>
+        </form>
       </div>
     </header>
   );
