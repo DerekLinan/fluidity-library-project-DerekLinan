@@ -11,8 +11,8 @@ const Header = () => {
   const searchForBooks = (e) => {
     e.preventDefault();
     const params = new URLSearchParams('?');
-    params.set('search', searchText.toLowerCase().trim());
-    if (params.get('search')) {
+    params.set('q', searchText.toLowerCase().trim());
+    if (params.get('q')) {
       return history.push({
         pathname: '/bookshelf',
         search: params.toString(),
