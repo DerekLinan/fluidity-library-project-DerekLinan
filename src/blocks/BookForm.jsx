@@ -142,7 +142,7 @@ const BookForm = ({ callBackFunc }) => {
 
           <div className="button-group">
             <button className="button" type="submit">
-              {isEditBook ? 'Edit' : 'Add'} Book
+              {isEditBook ? 'Save Changes' : 'Add Book'}
             </button>
             <button
               className="button button--secondary-color"
