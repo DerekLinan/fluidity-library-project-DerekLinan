@@ -1,0 +1,99 @@
+@use './abstracts/reset';
+@use './blocks/main';
+@use './blocks/book-card';
+@use './blocks/section';
+@use './blocks/button';
+
+@import './abstracts/spacing';
+@import './abstracts/colors';
+
+.book-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: $spacingLarge;
+  margin: $spacingMedium;
+
+  @media (max-width: $mobileWidthMax) {
+    flex-direction: column;
+    &__info > .section__header {
+      white-space: nowrap;
+      width: 95vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .label-before::before {
+    display: none;
+    content: 'Rating';
+    margin: $spacingSmall;
+    text-align: center;
+    color: $primaryTextColor;
+
+    @media (max-width: $mobileWidthMax) {
+      display: block;
+    }
+  }
+
+  .book-card {
+    height: $mobileBookCardHeight;
+    padding: 0px;
+    margin-right: $spacingSmall;
+    flex-shrink: 0;
+
+    @media (max-width: $mobileWidthMax) {
+      justify-content: start;
+      gap: 2em;
+      position: absolute;
+      top: 1.5em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $spacingMedium;
+    flex-grow: 1;
+    overflow: hidden auto;
+
+    .section {
+      &__h2,
+      &__h3,
+      &__text {
+        @media (max-width: $mobileWidthMax) {
+          text-align: center;
+        }
+      }
+
+      @media (max-width: $mobileWidthMax) {
+        &__header {
+          margin-top: 0;
+        }
+
+        &__header::after {
+          display: block;
+          height: $mobileBookCardImageHeight - 2.5em;
+          content: '';
+        }
+
+        &__h2 {
+          margin-top: -1em;
+          white-space: nowrap;
+          width: 95vw;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &__h2:first-of-type::after {
+          display: block;
+          height: 2em; //must match height of rating bar and text
+          content: '';
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@import '../abstracts/colors';
+@import '../abstracts/spacing';
+
+.section {
+  flex-grow: 1;
+  overflow: auto auto;
+  &__header {
+    margin: $spacingMedium;
+    flex-shrink: 0;
+    font-size: 2em;
+    font-weight: normal;
+    text-align: center;
+    color: $primaryTextColor;
+  }
+  &__h2 {
+    margin: $spacingMedium;
+    flex-shrink: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: $primaryTextColor;
+  }
+  &__h3 {
+    margin: $spacingMedium;
+    flex-shrink: 0;
+    font-size: 1em;
+    font-style: oblique;
+    font-weight: normal;
+    color: $primaryTextColor;
+  }
+  &__text {
+    margin-top: $spacingMedium;
+    margin-bottom: $spacingMedium;
+    padding-left: $spacingLarge;
+    padding-right: $spacingLarge;
+    text-align: left;
+    font-size: 1em;
+    color: $primaryTextColor;
+    @media (max-width: $mobileWidthMax) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.bookshelf-section {
+  padding: $spacingMedium;
+  margin: 0;
+  align-content: center;
+  overflow: hidden auto;
+}
