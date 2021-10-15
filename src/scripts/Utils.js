@@ -21,3 +21,7 @@ export const editBook = (id, data) => {
 export const deleteBook = (id) => {
   return axios.delete(`${local}/${id}`);
 };
+
+export const searchBooks = (search) => {
+  return axios.get(`${local}/${search}`);
+};
