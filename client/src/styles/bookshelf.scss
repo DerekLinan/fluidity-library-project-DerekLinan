@@ -1,0 +1,12 @@
+@import '../styles/abstracts/spacing';
+
+.bookshelf {
+  padding: $spacingLarge + $spacingMedium;
+  display: flex;
+  overflow: hidden auto;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobileWidthMax) {
+    justify-content: center;
+  }
+}
