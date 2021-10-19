@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Author extends Model {
     static associate({ Book }) {
-      this.belongsToMany(Book);
+      this.hasMany(Book);
     }
   }
   Author.init(
