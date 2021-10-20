@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "seed": "node seeds/index",
     "install": "cd ../client && npm install",
     "client": "cd ../client && npm start",
     "lint": "cd ../client && eslint --ext ts, tsx, js, jsx src",
