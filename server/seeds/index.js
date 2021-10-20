@@ -1,6 +1,6 @@
-import { sequelize, Author, Book } from '../models';
-import authors from './authorSeeds.json';
-import books from './bookSeeds.json';
+const { sequelize, Author, Book } = '../models';
+const authors = './authorSeeds.json';
+const books = './bookSeeds.json';
 
 const seedTables = async () => {
   await sequelize.sync({ FORCE: true });

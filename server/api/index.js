@@ -1,8 +1,11 @@
 const router = require('express').Router();
-import authorRoutes from './author';
-import bookRoutes from './book';
+const authorRoutes = './author';
+const bookRoutes = './book';
 
-router.use('/authors', authorRoutes);
-router.use('/books', bookRoutes);
+console.log('api 1');
+router.route('/authors', authorRoutes);
+console.log('api 1.5');
+router.route('/books', bookRoutes);
+console.log('api 2');
 
 module.exports = router;
