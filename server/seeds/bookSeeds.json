@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Eragon",
-    "AuthorID": 1,
+    "AuthorId": 1,
     "synopsis": "A Shade named Durza, along with a group of Urgals, ambushes a party od three elves. They kill two of them, and Durza attempts to steal an egg carried by the remaining female elf, but she uses magic to teleport it elsewhere.",
     "published": "2002-08-26",
     "pages": 544,
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "title": "Eldest",
-    "AuthorID": 1,
+    "AuthorId": 1,
     "synopsis": "Eldest begins three days after the events of the preceding novel, Eragon, in the dwarf city of Tronjheim, inside of a hollowed mountain named Farthen Dur. Eldest begins as Ajihad, the king of the rebel Varden force, is ambushed and killed while The Twins and Murtagh are assumed dead. Ajihad's daughter Nasuada is elected to command the Varden, and decides to move them to Surda and oppose the Empire openly.",
     "published": "2005-08-23",
     "pages": 694,
@@ -22,7 +22,7 @@
   {
     "id": 3,
     "title": "Brisingr",
-    "AuthorID": 1,
+    "AuthorId": 1,
     "synopsis": "Eragon, Saphira, and Roran travel to Helgrind, the home of the Ra'zac. There, they rescue Roran's betrothed, Katrina, held prisoner there, and kill one of the Ra'zac. Saphira, Roran, and Katrina return to the Varden, while Eragon stays behind. Eragon slays the remaining Ra'zac, who warns him that Galbatorix has discovered the name. Eragon also finds and condemns Sloan, Katrina's treacherous father, to never meet his daughter again, and arranges for him to travel to Ellesmera, the elven homeland.",
     "published": "2008-09-20",
     "pages": 831,
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "title": "Inheritance",
-    "AuthorID": 1,
+    "AuthorId": 1,
     "synopsis": "The Varden attack the Empire city of Belatona. In the battle, Saphira, Eragon's dragon, is nearly killed by a Dauthdaert, a spear from the Dragon Wars that can bypass magical wards and kill dragons. Belatona is captured by the Varden, and an alliance is later formed between the Varden and the werecats.",
     "published": "2011-11-08",
     "pages": 860,
@@ -42,7 +42,7 @@
   {
     "id": 5,
     "title": "Uncle John's Bathroom Reader",
-    "AuthorID": 2,
+    "AuthorId": 2,
     "synopsis": "At last...Here it is...The book you've been waiting for! No more frantic searches at the last minute for that perfect magazine article. No agonizing choices between light reading and the serious stuff. This little volume has it all: Entertainment, humor, education, trivia, science, history, pop culture...and more! And it's even divided by length--you can spend a minute with the Quickies, relax with Normal-length articles, or really get comfortable with Long Items.",
     "published": "1988-11-15",
     "pages": 224,
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "title": "Uncle John's Hindsight is 20/20 Bathroom Reader",
-    "AuthorID": 2,
+    "AuthorId": 2,
     "synopsis": "This 34th annual edition of Uncle John’s Bathroom Reader offers an all-new collection of fascinating trivia, strange-but-true oddities, and the ever-popular stories of dumb crooks!",
     "published": "2021-09-07",
     "pages": 416,
@@ -62,7 +62,7 @@
   {
     "id": 7,
     "title": "Learn Javascript Quickly",
-    "AuthorID": 3,
+    "AuthorId": 3,
     "synopsis": "Don’t let the fact that you’ve never programmed before stop you from having a highly profitable career, JavaScript is the simplest programming language anyone can learn. We all start somewhere, but you first need to make sure you start out on the right foot and equip yourself with the best tools of the trade.",
     "published": "2020-11-10",
     "pages": 174,
@@ -72,7 +72,7 @@
   {
     "id": 8,
     "title": "Introduction to Algorithms",
-    "AuthorID": 4,
+    "AuthorId": 4,
     "synopsis": "This internationally acclaimed textbook provides a comprehensive introduction to the modern study of computer algorithms. It covers a broad range of algorithms in depth, yet makes their design and analysis accessible to all levels of readers. Each chapter is relatively selfcontained and presents an algorithm, a design technique, an application area, or a related topic. The algorithms are described and designed in a manner to be readable by anyone who has done a little programming. The explanations have been kept elementary without sacrificing depth of coverage or mathematical rigor.",
     "published": "2010-02-02",
     "pages": 1312,
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "title": "Proofs: A Long-Form Mathematics Textbook",
-    "AuthorID": 5,
+    "AuthorId": 5,
     "synopsis": "This textbook is designed for students. Rather than the typical definition-theorem-proof-repeat style, this text includes much more commentary, motivation and explanation. The proofs are not terse, and aim for understanding over economy. Furthermore, dozens of proofs are preceded by \"scratch work\" or a proof sketch to give students a big-picture view and an explanation of how they would come up with it on their own.This book covers intuitive proofs, direct proofs, sets, induction, logic, the contrapositive, contradiction, functions and relations. The text aims to make the ideas visible, and contains over 200 illustrations. The writing is relaxed and conversational, and includes periodic attempts at humor.This text is also an introduction to higher mathematics.",
     "published": "2021-01-19",
     "pages": 511,
@@ -92,7 +92,7 @@
   {
     "id": 10,
     "title": "Riddles for Adults: Level: Medium",
-    "AuthorID": 6,
+    "AuthorId": 6,
     "synopsis": "Level: Medium Over 950 Challenging riddles that twist your mind. Do you like riddles? Do you like brain teasers? Do you like puzzles? Are you a problem solver? Are you creative? Do you think outside the box? If you can answer yes to any of these questions, this book may be perfect for you. Introducing a collection of the best riddles, puzzles, and brain teasers that has been years in the making. These will challenge the way you think, introduce you to new ways to look at problems, and expand your mind.",
     "published": "2020-08-28",
     "pages": 82,
@@ -101,7 +101,7 @@
   },
   {
     "title": "Test title",
-    "AuthorID": 7,
+    "AuthorId": 7,
     "image": "",
     "synopsis": "jasdafkasfhjghkdfsgfhdsk.  shlfdas ls afak sdjk kasjd sdfl r uth hw qw ehjwhjhs the ne d sadkja l froj sdfm jhhow weeer he as djsd asdl. although he sa==was aviibjfkj asjkhrkthen sfthe n wen dito atgs akamdk .",
     "published": "1212-12-12",

@@ -3,7 +3,9 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Book extends Model {
     static associate({ Author }) {
-      this.belongsTo(Author, { foreignKey: { allowNull: false } });
+      this.belongsTo(Author, {
+        foreignKey: { name: 'AuthorId', allowNull: false },
+      });
     }
   }
   Book.init(
@@ -28,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      rating: { type: DataTypes.INTEGER },
+      rating: { type: DataTypes.FLOAT },
       image: {
         type: DataTypes.STRING,
         validate: {

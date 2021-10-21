@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.static('public'));
 app.use('/api', api);
 
-sequelize.sync().then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`API server listening on http://localhost:${PORT}!`);
   });

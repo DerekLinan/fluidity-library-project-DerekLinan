@@ -1,11 +1,10 @@
 const router = require('express').Router();
-const authorRoutes = './author';
-const bookRoutes = './book';
+const authorRoutes = require('./author');
+const bookRoutes = require('./book');
+const logger = require('morgan');
 
-console.log('api 1');
-router.route('/authors', authorRoutes);
-console.log('api 1.5');
-router.route('/books', bookRoutes);
-console.log('api 2');
+router.use(logger('tiny'));
+router.use('/authors', authorRoutes);
+router.use('/books', bookRoutes);
 
 module.exports = router;

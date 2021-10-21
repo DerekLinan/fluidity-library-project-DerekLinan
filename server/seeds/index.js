@@ -1,6 +1,6 @@
-const { sequelize, Author, Book } = '../models';
-const authors = './authorSeeds.json';
-const books = './bookSeeds.json';
+const { sequelize, Author, Book } = require('../models');
+const authors = require('./authorSeeds.json');
+const books = require('./bookSeeds.json');
 
 const seedTables = async () => {
   await sequelize.sync({ FORCE: true });
