@@ -38,6 +38,7 @@ module.exports = {
       .catch((e) => res.satus(500).json(e));
   },
   search: (req, res) => {
+    console.log('search called');
     const { search } = req.query;
     Book.findAll({
       include: [Author],
@@ -47,11 +48,10 @@ module.exports = {
           { '$Author.first_name$': { [Op.substring]: search } },
           { '$Author.last_name$': { [Op.substring]: search } },
         ],
-        defaults: { first_name, last_name },
       },
     })
       .then((book) => res.json(book))
-      .catch((e) => res.status(500).json(e));
+      .catch((e) => res.status(500).json(search));
   },
   update: (req, res) => {
     Book.update(req.body, {

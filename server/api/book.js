@@ -2,8 +2,8 @@ const router = require('express').Router();
 const bookController = require('../controllers/bookController');
 const logger = require('morgan');
 
+router.route('/search/').get(bookController.search);
 router.route('/').get(bookController.findAll).post(bookController.create);
-router.route('/?').get(bookController.search);
 router
   .route('/:id')
   .get(bookController.findById)
