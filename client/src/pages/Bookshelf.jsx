@@ -15,6 +15,15 @@ const Bookshelf = () => {
     setSearchParams(location.search);
   }
 
+  const filterBooks = (unfilteredBooks) => {
+    return unfilteredBooks.filter((element) => {
+      return (
+        element.author.toLowerCase().includes(param) ||
+        element.title.toLowerCase().includes(param)
+      );
+    });
+  };
+
   useEffect(() => {
     if (location.search) {
       searchBooks(location.search)
@@ -35,18 +44,6 @@ const Bookshelf = () => {
     }
   }, [searchParams]);
 
-  const filterBooks = (unfilteredBooks) => {
-    console.log(param);
-    return unfilteredBooks.filter((element) => {
-      console.log(element.author);
-      console.log(element.title);
-      return (
-        element.author.toLowerCase().includes(param) ||
-        element.title.toLowerCase().includes(param)
-      );
-    });
-  };
-
   return (
     <main className="main">
       <section className="section">
@@ -57,11 +54,11 @@ const Bookshelf = () => {
         </h1>
         <div className="bookshelf-section">
           <div className="bookshelf">
-            {bookList.map(({ id, title, image, author, synopsis }) => (
+            {bookList.map(({ id, title, image, author, Author, synopsis }) => (
               <BookCard
                 key={id + title}
                 id={id}
-                author={author}
+                author={author || `${Author.first_name} ${Author.last_name}`}
                 title={title}
                 image={image || noCover}
                 synopsis={synopsis}

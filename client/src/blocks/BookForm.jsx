@@ -12,13 +12,23 @@ const BookForm = ({ callBackFunc }) => {
   const [bookData, setBookData] = useState({
     title: '',
     author: '',
-    image: '',
+    Author: { first_name: '', last_name: '' },
+    image: null,
     synopsis: '',
     published: '',
-    pages: 0,
+    pages: 1,
     rating: 0,
   });
-  const { title, author, image, synopsis, published, pages, rating } = bookData;
+  const {
+    title,
+    author,
+    Author: { first_name: fn, last_name: ln },
+    image,
+    synopsis,
+    published,
+    pages,
+    rating,
+  } = bookData;
 
   const location = useLocation();
   const isEditBook = location.pathname !== '/add-book';
@@ -41,13 +51,18 @@ const BookForm = ({ callBackFunc }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
+    console.log(bookData);
     const titleInput = bookData.title.trim();
-    const authorInput = bookData.author.trim();
+    const authorInput = author ? bookData.author.trim() : `${fn} ${ln}`;
 
     if (!(titleInput && authorInput))
       return alert('Must include at least a title and author to add book');
 
-    return callBackFunc(bookData);
+    const data = {
+      ...bookData,
+      Author: { first_name: authorInput, last_name: '' },
+    };
+    return callBackFunc(data);
   };
 
   const removeBook = () => {
@@ -82,7 +97,7 @@ const BookForm = ({ callBackFunc }) => {
             <input
               className="input__field add-author-field"
               type="text"
-              value={author}
+              value={author || `${fn} ${ln}`}
               onChange={(e) => dataChanged('author', e)}
               required
               minLength="1"
@@ -165,7 +180,7 @@ const BookForm = ({ callBackFunc }) => {
 };
 
 BookForm.defaultProps = {
-  callBackFunc: console.log('No callback'),
+  callBackFunc: undefined,
 };
 
 BookForm.propTypes = {
