@@ -3,7 +3,6 @@ const authorRoutes = require('./author');
 const bookRoutes = require('./book');
 const logger = require('morgan');
 
-router.use(logger('tiny'));
 router.use('/authors', authorRoutes);
 router.use('/books', bookRoutes);
 

@@ -1,10 +1,23 @@
 const { Author, Book } = require('../models');
 const { Op } = require('sequelize');
+const logger = require('morgan');
 
 module.exports = {
   create: (req, res) => {
-    Book.create(req.body)
-      .then(() => res.json())
+    const { first_name: fn, last_name: ln } = req.body.Author;
+    let author;
+    Author.findOrCreate({
+      where: {
+        first_name: fn,
+        last_name: ln,
+      },
+    })
+      .then((ret) => {
+        const data = { ...req.body, AuthorId: ret[0].dataValues.id };
+        Book.create(data)
+          .then(() => res.json())
+          .catch((e) => res.status(500).json(e));
+      })
       .catch((e) => res.status(500).json(e));
   },
   delete: (req, res) => {
@@ -34,14 +47,23 @@ module.exports = {
           { '$Author.first_name$': { [Op.substring]: search } },
           { '$Author.last_name$': { [Op.substring]: search } },
         ],
+        defaults: { first_name, last_name },
       },
     })
       .then((book) => res.json(book))
       .catch((e) => res.status(500).json(e));
   },
   update: (req, res) => {
-    Book.update(req.body)
-      .then(() => res.json())
-      .catch((e) => res.status(500).json(e));
+    Book.update(req.body, {
+      where: { id: req.params.id },
+    })
+      .then(() => {
+        Author.update(req.body.Author, {
+          where: { id: req.body.AuthorId },
+        })
+          .then(() => res.status(200).json())
+          .catch((e) => res.status(500).json(e));
+      })
+      .catch((e) => res.status(501).json(e));
   },
 };
