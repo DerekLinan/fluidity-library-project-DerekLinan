@@ -24,5 +24,5 @@ export const deleteBook = (id) => {
 };
 
 export const searchBooks = (search) => {
-  return axios.get(`${backend}/${search}`);
+  return axios.get(`${backend}/search/${search}`);
 };

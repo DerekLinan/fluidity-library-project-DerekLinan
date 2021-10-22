@@ -10,7 +10,7 @@ const Bookshelf = () => {
 
   const [searchParams, setSearchParams] = useState('');
   const location = useLocation();
-  const param = new URLSearchParams(location.search).get('q');
+  const param = new URLSearchParams(location.search).get('search');
   if (location.search !== searchParams) {
     setSearchParams(location.search);
   }
@@ -28,7 +28,7 @@ const Bookshelf = () => {
     if (location.search) {
       searchBooks(location.search)
         .then(({ data: books }) => {
-          setBooks(filterBooks(books));
+          setBooks(books);
         })
         .catch((e) => {
           throw new Error(e);
