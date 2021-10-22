@@ -64,6 +64,7 @@ module.exports = {
           .then(() => res.status(200).json())
           .catch((e) => res.status(500).json(e));
       })
+      .then((ret) => res.status(200).json(ret))
       .catch((e) => res.status(501).json(e));
   },
 };
