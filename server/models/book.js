@@ -3,7 +3,9 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Book extends Model {
     static associate({ Author }) {
-      this.belongsTo(Author);
+      this.belongsTo(Author, {
+        foreignKey: { name: 'AuthorId', allowNull: false },
+      });
     }
   }
   Book.init(
@@ -21,15 +23,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         defaultValue: 1,
         validate: {
-          isGreaterThan(value) {
+          isGreaterThanZero(value) {
             if (value < 1) {
               throw new Error('Number of pages must be greater than 0');
             }
           },
         },
       },
-      rating: { type: DataTypes.INTEGER },
-      cover_image: {
+      rating: { type: DataTypes.FLOAT },
+      image: {
         type: DataTypes.STRING,
         validate: {
           isUrl: true,

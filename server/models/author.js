@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Author extends Model {
     static associate({ Book }) {
-      this.hasMany(Book);
+      this.hasMany(Book, { onDelete: 'CASCADE', hooks: true });
     }
   }
   Author.init(
