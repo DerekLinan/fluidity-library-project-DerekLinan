@@ -4,12 +4,12 @@ module.exports = (sequelize, DataTypes) => {
   class Image extends Model {}
   Image.init(
     {
-      file_name: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
         require: true,
       },
-      file_type: {
+      type: {
         type: DataTypes.STRING,
         allowNull: false,
         require: true,

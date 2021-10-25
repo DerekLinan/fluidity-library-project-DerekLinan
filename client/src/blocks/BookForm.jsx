@@ -80,7 +80,7 @@ const BookForm = ({ callBackFunc }) => {
       <section className="section">
         <h1 className="section__header">{isEditBook ? 'Edit' : 'Add'} Book</h1>
 
-        <form onSubmit={(e) => handleOnSubmit(e)}>
+        <form encType="multipart/form-data" onSubmit={(e) => handleOnSubmit(e)}>
           <div className="layout-block">
             <p className="section__text add-title">Title</p>
             <input
@@ -113,9 +113,16 @@ const BookForm = ({ callBackFunc }) => {
               />
               <p className="book-cover__text">{image ? '' : 'Add Image'}</p>
             </div>
-            <button className="button grid--reposition" type="button">
+            <label htmlFor="upload" className="button grid--reposition">
               Add Image
-            </button>
+              <input
+                id="upload"
+                className="book-cover__input"
+                type="file"
+                name="file"
+                accept="image/*"
+              />
+            </label>
 
             <p className="section__text add-synopsis">Synopsis</p>
             <textarea

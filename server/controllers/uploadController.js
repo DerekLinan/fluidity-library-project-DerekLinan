@@ -2,7 +2,8 @@ const fs = require('fs');
 const { Image } = require('../models');
 
 module.exports = {
-  uploadFile: (req, res) => {
+  uploadFiles: (req, res) => {
+    console.log('uploadController route hit!');
     console.log(req.file);
 
     if (req.file === undefined) {

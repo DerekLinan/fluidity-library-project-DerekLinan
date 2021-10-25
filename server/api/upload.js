@@ -1,21 +1,9 @@
-const multer = require('multer');
+const router = require('express').Router();
+const uploadController = require('../controllers/uploadController');
+const upload = require('../middleware/upload');
 
-const imageFilter = (req, file, res) => {
-  if (file.mimetype.startsWith('image')) {
-    res(null, true);
-  } else {
-    res('Only images can be uploaded', false);
-  }
-};
+router
+  .route('/upload/')
+  .post(upload.single('file'), uploadController.uploadFiles);
 
-var storage = multer.diskStorage({
-  destination: (req, file, res) => {
-    res(null, __dirname + '/api/uploads/');
-  },
-  filename: (req, file, res) => {
-    res(null, Date.now() + '-lib' + file.originalname);
-  },
-});
-
-const uploadFile = multer({ storage, fileFilter: imageFilter });
-module.exports = uploadFile;
+module.exports = router;

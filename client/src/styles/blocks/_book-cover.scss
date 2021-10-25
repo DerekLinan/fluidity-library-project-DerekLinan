@@ -35,4 +35,8 @@
     text-align: center;
     margin: $spacingMedium;
   }
+
+  &__input {
+    display: none;
+  }
 }
