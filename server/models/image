@@ -1,0 +1,31 @@
+'use strict';
+const { Model } = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Image extends Model {}
+  Image.init(
+    {
+      file_name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        require: true,
+      },
+      file_type: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        require: true,
+      },
+      data: {
+        type: DataTypes.BLOB('long'),
+        allowNull: false,
+        require: true,
+      },
+    },
+
+    {
+      sequelize,
+      tableName: 'Images',
+      modelName: 'Image',
+    }
+  );
+  return Image;
+};
