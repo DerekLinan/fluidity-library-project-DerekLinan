@@ -1,6 +1,10 @@
 const multer = require('multer');
+const logger = require('morgan');
 
 const imageFilter = (req, file, res) => {
+  logger('dev');
+  console.log('multer hit');
+  console.log(file);
   if (file.mimetype.startsWith('image')) {
     res(null, true);
   } else {
@@ -17,5 +21,9 @@ var storage = multer.diskStorage({
   },
 });
 
-const uploadFile = multer({ storage: storage, fileFilter: imageFilter });
+const uploadFile = multer({
+  storage: storage,
+  limits: 50 * 1024 * 1024,
+  fileFilter: imageFilter,
+});
 module.exports = uploadFile;

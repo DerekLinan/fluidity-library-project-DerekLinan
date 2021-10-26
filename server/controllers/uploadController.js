@@ -3,10 +3,9 @@ const { Image } = require('../models');
 
 module.exports = {
   uploadFiles: (req, res) => {
-    console.log('uploadController route hit!');
-    console.log(req.file);
+    console.log(req.body);
 
-    if (req.file === undefined) {
+    if (req.file == undefined) {
       return res.status(400).send('Must select a file');
     }
 
@@ -21,5 +20,14 @@ module.exports = {
         return res.status(200);
       })
       .catch((e) => res.status(500).json(e));
+  },
+  get: (req, res) => {
+    Image.findAll({
+      where: {
+        name: req.body.name,
+      },
+    })
+      .then((image) => res.json(image))
+      .catch((e) => res.satus(500).json(e));
   },
 };

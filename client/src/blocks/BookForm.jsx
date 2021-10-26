@@ -3,7 +3,7 @@ import { useHistory, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import StarRating from './StarRating';
-import { loadBook, deleteBook } from '../scripts/Utils';
+import { loadBook, deleteBook, addImage } from '../scripts/Utils';
 import noCover from '../images/no-cover.png';
 
 const BookForm = ({ callBackFunc }) => {
@@ -51,7 +51,6 @@ const BookForm = ({ callBackFunc }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(bookData);
     const titleInput = bookData.title.trim();
     const authorInput = author ? bookData.author.trim() : `${fn} ${ln}`;
 
@@ -63,6 +62,25 @@ const BookForm = ({ callBackFunc }) => {
       Author: { first_name: authorInput, last_name: '' },
     };
     return callBackFunc(data);
+  };
+
+  const imageAdded = (event) => {
+    if (event.target.files.length > 0) {
+      console.log('files[0] is truthy');
+      const src = URL.createObjectURL(event.target.files[0]);
+      setBookData((prevData) => ({ ...prevData, image: src }));
+    } else {
+      console.log('files[0] is falsey');
+    }
+    // addImage({ file: event.target.files[0] })
+    //   .then((data) => {
+    //     console.log(data);
+    //     dataChanged('image', data); //convert data to url
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //     throw new Error(e);
+    //   });
   };
 
   const removeBook = () => {
@@ -118,6 +136,7 @@ const BookForm = ({ callBackFunc }) => {
               <input
                 id="upload"
                 className="book-cover__input"
+                onChange={(e) => imageAdded(e)}
                 type="file"
                 name="file"
                 accept="image/*"

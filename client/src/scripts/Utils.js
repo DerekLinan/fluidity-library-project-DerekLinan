@@ -26,3 +26,7 @@ export const deleteBook = (id) => {
 export const searchBooks = (search) => {
   return axios.get(`${backend}/search/${search}`);
 };
+
+export const addImage = (image) => {
+  return axios.post('http://localhost:8080/api/upload/', image);
+};
