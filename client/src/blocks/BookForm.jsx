@@ -50,7 +50,6 @@ const BookForm = ({ callBackFunc }) => {
           setBookData(data);
           if (data.image) {
             prevImageURL = data.image;
-            console.log(`prevImageURL: ${prevImageURL}`);
           }
         })
         .catch((e) => {

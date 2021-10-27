@@ -4,7 +4,6 @@ const logger = require('morgan');
 
 module.exports = {
   create: (req, res) => {
-    console.log(req.body);
     req.body.image = req.body.image || null;
     const { first_name: fn, last_name: ln } = req.body.Author;
     let author;
@@ -16,11 +15,9 @@ module.exports = {
     })
       .then((ret) => {
         const data = { ...req.body, AuthorId: ret[0].dataValues.id };
-        console.log(data);
         Book.create(data)
           .then(() => res.json())
           .catch((e) => {
-            console.log(e);
             res.status(503).json(e);
           });
       })
@@ -59,7 +56,6 @@ module.exports = {
       .catch((e) => res.status(500).json(search));
   },
   update: (req, res) => {
-    console.log('updating book...');
     req.body.image = req.body.image || null;
     Book.update(req.body, {
       where: { id: req.params.id },
@@ -70,13 +66,11 @@ module.exports = {
         })
           .then(() => res.status(200).json())
           .catch((e) => {
-            console.log(e);
             res.status(500).json(e);
           });
       })
       .then((ret) => res.status(200).json(ret))
       .catch((e) => {
-        console.log(e);
         res.status(500).json(e);
       });
   },
