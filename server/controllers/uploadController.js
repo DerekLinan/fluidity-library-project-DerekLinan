@@ -7,7 +7,6 @@ module.exports = {
       return res.status(400).send('Must select a file');
     }
 
-    console.log(req.file);
     Image.create({
       name: req.file.originalname,
       type: req.file.mimetype,
@@ -21,7 +20,7 @@ module.exports = {
           image.data
         );
 
-        return res.status(200).json({ name: image.name });
+        return res.status(200).json({ id: image.id });
       })
       .catch((e) => {
         console.log(e);
@@ -30,11 +29,16 @@ module.exports = {
   },
   get: (req, res) => {
     console.log('attempting to get image...');
-    Image.findAll({
+    Image.findByPK({
       where: {
         name: req.body.name,
       },
     })
+      .then((image) => res.json(image))
+      .catch((e) => res.satus(500).json(e));
+  },
+  findById: (req, res) => {
+    Image.findByPk(req.params.id)
       .then((image) => res.json(image))
       .catch((e) => res.satus(500).json(e));
   },

@@ -59,6 +59,7 @@ module.exports = {
       .catch((e) => res.status(500).json(search));
   },
   update: (req, res) => {
+    console.log('updating book...');
     req.body.image = req.body.image || null;
     Book.update(req.body, {
       where: { id: req.params.id },
@@ -68,9 +69,15 @@ module.exports = {
           where: { id: req.body.AuthorId },
         })
           .then(() => res.status(200).json())
-          .catch((e) => res.status(500).json(e));
+          .catch((e) => {
+            console.log(e);
+            res.status(500).json(e);
+          });
       })
       .then((ret) => res.status(200).json(ret))
-      .catch((e) => res.status(500).json(e));
+      .catch((e) => {
+        console.log(e);
+        res.status(500).json(e);
+      });
   },
 };

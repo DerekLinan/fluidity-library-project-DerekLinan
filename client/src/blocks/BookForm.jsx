@@ -50,6 +50,7 @@ const BookForm = ({ callBackFunc }) => {
           setBookData(data);
           if (data.image) {
             prevImageURL = data.image;
+            console.log(`prevImageURL: ${prevImageURL}`);
           }
         })
         .catch((e) => {
@@ -58,16 +59,10 @@ const BookForm = ({ callBackFunc }) => {
     }
   }, [isEditBook]);
 
-  const handleRequired = () => {
-    const titleInput = bookData.title.trim();
-    const authorInput = author ? bookData.author.trim() : `${fn} ${ln}`;
-
-    if (!(titleInput && authorInput))
-      return alert('Must include at least a title and author to add book');
-
+  const handleRequired = (firstName) => {
     const data = {
       ...bookData,
-      Author: { first_name: authorInput, last_name: '' },
+      Author: { first_name: firstName, last_name: '' },
     };
     return callBackFunc(data);
   };
@@ -75,22 +70,27 @@ const BookForm = ({ callBackFunc }) => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
+    const titleInput = bookData.title.trim();
+    const authorInput = author ? bookData.author.trim() : `${fn} ${ln}`;
+
+    if (!(titleInput && authorInput))
+      return alert('Must include at least a title and author to add book');
+
     if (imageInput.current.files.length > 0) {
-      console.log('attempting to add image...');
       addImage(imageInput.current.files[0])
         .then(({ data }) => {
           console.log(data);
-          bookData.image = `${getImageURL}${data.name}`;
-          if (prevImageURL && prevImageURL !== bookData.image) {
+          bookData.image = `${getImageURL}${data.id}`;
+          if (prevImageURL) {
             deleteImage(prevImageURL)
-              .then(handleRequired())
+              .then(handleRequired(authorInput))
               .catch((error) => {
                 console.log('error after deletion');
                 throw new Error(error);
               });
           } else {
             console.log('no image to delete');
-            handleRequired();
+            handleRequired(authorInput);
           }
         })
         .catch((error) => {
@@ -99,7 +99,7 @@ const BookForm = ({ callBackFunc }) => {
         });
     } else {
       console.log('no image files');
-      handleRequired();
+      handleRequired(authorInput);
     }
   };
 

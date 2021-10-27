@@ -5,5 +5,6 @@ const upload = require('../middleware/upload');
 router
   .route('/')
   .post(upload.single('imageFileInput'), uploadController.uploadFiles);
+router.route('/:id').get(uploadController.findById);
 
 module.exports = router;
