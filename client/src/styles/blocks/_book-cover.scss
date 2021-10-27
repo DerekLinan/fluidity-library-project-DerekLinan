@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;
   margin: $spacingLarge;
+  justify-content: center;
 
   @media (max-width: $mobileWidthMax) {
     height: auto;
