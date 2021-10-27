@@ -79,26 +79,21 @@ const BookForm = ({ callBackFunc }) => {
     if (imageInput.current.files.length > 0) {
       addImage(imageInput.current.files[0])
         .then(({ data }) => {
-          console.log(data);
           bookData.image = `${getImageURL}${data.id}`;
           if (prevImageURL) {
             deleteImage(prevImageURL)
               .then(handleRequired(authorInput))
               .catch((error) => {
-                console.log('error after deletion');
                 throw new Error(error);
               });
           } else {
-            console.log('no image to delete');
             handleRequired(authorInput);
           }
         })
         .catch((error) => {
-          console.log(error);
           throw new Error(error);
         });
     } else {
-      console.log('no image files');
       handleRequired(authorInput);
     }
   };
