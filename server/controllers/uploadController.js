@@ -3,25 +3,33 @@ const { Image } = require('../models');
 
 module.exports = {
   uploadFiles: (req, res) => {
-    console.log(req.body);
-
     if (req.file == undefined) {
       return res.status(400).send('Must select a file');
     }
 
+    console.log(req.file);
     Image.create({
-      name: req.file.originalName,
+      name: req.file.originalname,
       type: req.file.mimetype,
-      data: fs.readFileSync(__dirname + '/api/uploads/' + req.file.filename),
+      data: fs.readFileSync(
+        __basedir + '/resources/uploads/' + req.file.filename
+      ),
     })
       .then((image) => {
-        fs.writeFileSync(__dirname + '/api/temp/' + image.name, image.data);
+        fs.writeFileSync(
+          __basedir + '/resources/tmp/' + image.name,
+          image.data
+        );
 
-        return res.status(200);
+        return res.status(200).json({ name: image.name });
       })
-      .catch((e) => res.status(500).json(e));
+      .catch((e) => {
+        console.log(e);
+        res.status(500).json(e);
+      });
   },
   get: (req, res) => {
+    console.log('attempting to get image...');
     Image.findAll({
       where: {
         name: req.body.name,

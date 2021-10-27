@@ -28,5 +28,11 @@ export const searchBooks = (search) => {
 };
 
 export const addImage = (image) => {
-  return axios.post('http://localhost:8080/api/upload/', image);
+  const form = new FormData();
+  form.append('imageFileInput', image, image.name);
+  return axios.post('http://localhost:8080/api/upload/', form);
+};
+
+export const deleteImage = (imageURL) => {
+  return axios.delete(`${imageURL}`);
 };

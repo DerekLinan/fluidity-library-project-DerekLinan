@@ -2,9 +2,6 @@ const multer = require('multer');
 const logger = require('morgan');
 
 const imageFilter = (req, file, res) => {
-  logger('dev');
-  console.log('multer hit');
-  console.log(file);
   if (file.mimetype.startsWith('image')) {
     res(null, true);
   } else {
@@ -14,7 +11,7 @@ const imageFilter = (req, file, res) => {
 
 var storage = multer.diskStorage({
   destination: (req, file, res) => {
-    res(null, __dirname + '/api/uploads/');
+    res(null, __basedir + '/resources/uploads');
   },
   filename: (req, file, res) => {
     res(null, Date.now() + '-lib' + file.originalname);

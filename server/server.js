@@ -5,6 +5,8 @@ const app = express();
 const { sequelize } = require('./models');
 const PORT = process.env.PORT || 8080;
 
+global.__basedir = __dirname;
+
 const api = require('./api');
 
 const corsOptions = {

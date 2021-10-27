@@ -1,12 +1,16 @@
 import '../styles/blocks/book-form.scss';
 import { useHistory, useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import StarRating from './StarRating';
-import { loadBook, deleteBook, addImage } from '../scripts/Utils';
+import { loadBook, deleteBook, addImage, deleteImage } from '../scripts/Utils';
 import noCover from '../images/no-cover.png';
 
 const BookForm = ({ callBackFunc }) => {
+  const getImageURL = 'http://localhost:8080/api/upload/';
+  let prevImageURL = '';
+
+  const imageInput = useRef();
   const history = useHistory();
   const { id } = useParams();
   const [bookData, setBookData] = useState({
@@ -42,15 +46,19 @@ const BookForm = ({ callBackFunc }) => {
   useEffect(() => {
     if (isEditBook) {
       loadBook(id)
-        .then(({ data }) => setBookData(data))
+        .then(({ data }) => {
+          setBookData(data);
+          if (data.image) {
+            prevImageURL = data.image;
+          }
+        })
         .catch((e) => {
           throw new Error(e);
         });
     }
   }, [isEditBook]);
 
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
+  const handleRequired = () => {
     const titleInput = bookData.title.trim();
     const authorInput = author ? bookData.author.trim() : `${fn} ${ln}`;
 
@@ -64,23 +72,42 @@ const BookForm = ({ callBackFunc }) => {
     return callBackFunc(data);
   };
 
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    if (imageInput.current.files.length > 0) {
+      console.log('attempting to add image...');
+      addImage(imageInput.current.files[0])
+        .then(({ data }) => {
+          console.log(data);
+          bookData.image = `${getImageURL}${data.name}`;
+          if (prevImageURL && prevImageURL !== bookData.image) {
+            deleteImage(prevImageURL)
+              .then(handleRequired())
+              .catch((error) => {
+                console.log('error after deletion');
+                throw new Error(error);
+              });
+          } else {
+            console.log('no image to delete');
+            handleRequired();
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          throw new Error(error);
+        });
+    } else {
+      console.log('no image files');
+      handleRequired();
+    }
+  };
+
   const imageAdded = (event) => {
     if (event.target.files.length > 0) {
-      console.log('files[0] is truthy');
       const src = URL.createObjectURL(event.target.files[0]);
       setBookData((prevData) => ({ ...prevData, image: src }));
-    } else {
-      console.log('files[0] is falsey');
     }
-    // addImage({ file: event.target.files[0] })
-    //   .then((data) => {
-    //     console.log(data);
-    //     dataChanged('image', data); //convert data to url
-    //   })
-    //   .catch((e) => {
-    //     console.log(e);
-    //     throw new Error(e);
-    //   });
   };
 
   const removeBook = () => {
@@ -134,11 +161,12 @@ const BookForm = ({ callBackFunc }) => {
             <label htmlFor="upload" className="button grid--reposition">
               Add Image
               <input
+                ref={imageInput}
                 id="upload"
                 className="book-cover__input"
                 onChange={(e) => imageAdded(e)}
                 type="file"
-                name="file"
+                name="imageFileInput"
                 accept="image/*"
               />
             </label>
