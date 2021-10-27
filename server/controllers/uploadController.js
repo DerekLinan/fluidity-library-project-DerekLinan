@@ -27,19 +27,15 @@ module.exports = {
         res.status(500).json(e);
       });
   },
-  get: (req, res) => {
-    console.log('attempting to get image...');
-    Image.findByPK({
-      where: {
-        name: req.body.name,
-      },
-    })
-      .then((image) => res.json(image))
-      .catch((e) => res.satus(500).json(e));
-  },
   findById: (req, res) => {
     Image.findByPk(req.params.id)
-      .then((image) => res.json(image))
-      .catch((e) => res.satus(500).json(e));
+      .then((image) => {
+        res.setHeader('Content-Type', image.type);
+        res.status(200).send(image.data);
+      })
+      .catch((e) => {
+        console.log(e);
+        res.status(500).json(e);
+      });
   },
 };
