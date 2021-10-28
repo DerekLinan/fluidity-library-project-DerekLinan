@@ -12,6 +12,7 @@
   flex-direction: column;
   align-items: center;
   margin: $spacingLarge;
+  justify-content: center;
 
   @media (max-width: $mobileWidthMax) {
     height: auto;
@@ -34,5 +35,9 @@
     top: 2 * $inputHeight;
     text-align: center;
     margin: $spacingMedium;
+  }
+
+  &__input {
+    display: none;
   }
 }

@@ -9,12 +9,30 @@ const display = (star, rating) => {
   const classes = rating ? 'rating__star' : 'rating__star--empty';
 
   if (star - 0.5 === rating - 0) {
-    return <FontAwesomeIcon icon={faStarHalfAlt} className={classes} />;
+    return (
+      <FontAwesomeIcon
+        key={`fai${star}${rating}`}
+        icon={faStarHalfAlt}
+        className={classes}
+      />
+    );
   }
   if (star <= rating) {
-    return <FontAwesomeIcon icon={faStar} className={classes} />;
+    return (
+      <FontAwesomeIcon
+        key={`fai${star}${rating}`}
+        icon={faStar}
+        className={classes}
+      />
+    );
   }
-  return <FontAwesomeIcon icon={faStarOutline} className={classes} />;
+  return (
+    <FontAwesomeIcon
+      key={`fai${star}${rating}`}
+      icon={faStarOutline}
+      className={classes}
+    />
+  );
 };
 
 const StarRating = ({ rating, onChange }) => {
@@ -45,6 +63,7 @@ const StarRating = ({ rating, onChange }) => {
         {display(star, displayRating || currentRating)}
         {pos.map((text, index) => (
           <label
+            key={`labelKey${text}`}
             className={`rating__label rating__${text}`}
             htmlFor={`rating-${star}`}
           >
@@ -53,6 +72,7 @@ const StarRating = ({ rating, onChange }) => {
               type="radio"
               name="rating"
               id={`rating-${star * 2 - (1 - index)}`}
+              key={`rating-${star * 2 - (1 - index)}`}
               value={star - 0.5 * (1 - index)}
               checked={currentRating === star - 0.5 * (1 - index)}
               onChange={ratingChanged}

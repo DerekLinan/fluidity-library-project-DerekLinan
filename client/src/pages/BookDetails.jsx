@@ -7,7 +7,7 @@ import noCover from '../images/no-cover.png';
 
 const BookDetails = () => {
   const { id } = useParams();
-  const [book, setBook] = useState({});
+  const [book, setBook] = useState({ Author: {} });
   useEffect(() => {
     loadBook(id)
       .then(({ data: bookData }) => {
@@ -18,7 +18,16 @@ const BookDetails = () => {
       });
   }, [id]);
 
-  const { title, image, author, rating, synopsis, pages, published } = book;
+  const {
+    title,
+    image,
+    author,
+    Author: { first_name: fn, last_name: ln },
+    rating,
+    synopsis,
+    pages,
+    published,
+  } = book;
 
   const history = useHistory();
 
@@ -47,7 +56,7 @@ const BookDetails = () => {
           </div>
           <div className="book-details__info">
             <h1 className="section__header">{title}</h1>
-            <h2 className="section__h2">{author}</h2>
+            <h2 className="section__h2">{author || `${fn} ${ln}`}</h2>
             <h3 className="section__h3">Published: {published}</h3>
             <h3 className="section__h3">{pages} pages</h3>
             <p className="section__text">{synopsis}</p>

@@ -1,24 +1,38 @@
 import '../styles/blocks/book-form.scss';
 import { useHistory, useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import StarRating from './StarRating';
-import { loadBook, deleteBook } from '../scripts/Utils';
+import { loadBook, deleteBook, addImage, deleteImage } from '../scripts/Utils';
 import noCover from '../images/no-cover.png';
 
 const BookForm = ({ callBackFunc }) => {
+  const getImageURL = 'http://localhost:8080/api/upload/';
+  let prevImageURL = '';
+
+  const imageInput = useRef();
   const history = useHistory();
   const { id } = useParams();
   const [bookData, setBookData] = useState({
     title: '',
     author: '',
-    image: '',
+    Author: { first_name: '', last_name: '' },
+    image: null,
     synopsis: '',
     published: '',
-    pages: 0,
+    pages: 1,
     rating: 0,
   });
-  const { title, author, image, synopsis, published, pages, rating } = bookData;
+  const {
+    title,
+    author,
+    Author: { first_name: fn, last_name: ln },
+    image,
+    synopsis,
+    published,
+    pages,
+    rating,
+  } = bookData;
 
   const location = useLocation();
   const isEditBook = location.pathname !== '/add-book';
@@ -32,22 +46,62 @@ const BookForm = ({ callBackFunc }) => {
   useEffect(() => {
     if (isEditBook) {
       loadBook(id)
-        .then(({ data }) => setBookData(data))
+        .then(({ data }) => {
+          setBookData(data);
+          if (data.image) {
+            prevImageURL = data.image;
+          }
+        })
         .catch((e) => {
           throw new Error(e);
         });
     }
   }, [isEditBook]);
 
+  const handleRequired = (firstName) => {
+    const data = {
+      ...bookData,
+      Author: { first_name: firstName, last_name: '' },
+    };
+    return callBackFunc(data);
+  };
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
+
     const titleInput = bookData.title.trim();
-    const authorInput = bookData.author.trim();
+    const authorInput = author ? bookData.author.trim() : `${fn} ${ln}`;
 
     if (!(titleInput && authorInput))
       return alert('Must include at least a title and author to add book');
 
-    return callBackFunc(bookData);
+    if (imageInput.current.files.length > 0) {
+      addImage(imageInput.current.files[0])
+        .then(({ data }) => {
+          bookData.image = `${getImageURL}${data.id}`;
+          if (prevImageURL) {
+            deleteImage(prevImageURL)
+              .then(handleRequired(authorInput))
+              .catch((error) => {
+                throw new Error(error);
+              });
+          } else {
+            handleRequired(authorInput);
+          }
+        })
+        .catch((error) => {
+          throw new Error(error);
+        });
+    } else {
+      handleRequired(authorInput);
+    }
+  };
+
+  const imageAdded = (event) => {
+    if (event.target.files.length > 0) {
+      const src = URL.createObjectURL(event.target.files[0]);
+      setBookData((prevData) => ({ ...prevData, image: src }));
+    }
   };
 
   const removeBook = () => {
@@ -65,7 +119,7 @@ const BookForm = ({ callBackFunc }) => {
       <section className="section">
         <h1 className="section__header">{isEditBook ? 'Edit' : 'Add'} Book</h1>
 
-        <form onSubmit={(e) => handleOnSubmit(e)}>
+        <form encType="multipart/form-data" onSubmit={(e) => handleOnSubmit(e)}>
           <div className="layout-block">
             <p className="section__text add-title">Title</p>
             <input
@@ -82,7 +136,7 @@ const BookForm = ({ callBackFunc }) => {
             <input
               className="input__field add-author-field"
               type="text"
-              value={author}
+              value={author || `${fn} ${ln}`}
               onChange={(e) => dataChanged('author', e)}
               required
               minLength="1"
@@ -98,9 +152,18 @@ const BookForm = ({ callBackFunc }) => {
               />
               <p className="book-cover__text">{image ? '' : 'Add Image'}</p>
             </div>
-            <button className="button grid--reposition" type="button">
+            <label htmlFor="upload" className="button grid--reposition">
               Add Image
-            </button>
+              <input
+                ref={imageInput}
+                id="upload"
+                className="book-cover__input"
+                onChange={(e) => imageAdded(e)}
+                type="file"
+                name="imageFileInput"
+                accept="image/*"
+              />
+            </label>
 
             <p className="section__text add-synopsis">Synopsis</p>
             <textarea
@@ -165,7 +228,7 @@ const BookForm = ({ callBackFunc }) => {
 };
 
 BookForm.defaultProps = {
-  callBackFunc: console.log('No callback'),
+  callBackFunc: undefined,
 };
 
 BookForm.propTypes = {

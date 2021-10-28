@@ -4,6 +4,7 @@ const logger = require('morgan');
 
 module.exports = {
   create: (req, res) => {
+    req.body.image = req.body.image || null;
     const { first_name: fn, last_name: ln } = req.body.Author;
     let author;
     Author.findOrCreate({
@@ -16,9 +17,11 @@ module.exports = {
         const data = { ...req.body, AuthorId: ret[0].dataValues.id };
         Book.create(data)
           .then(() => res.json())
-          .catch((e) => res.status(500).json(e));
+          .catch((e) => {
+            res.status(503).json(e);
+          });
       })
-      .catch((e) => res.status(500).json(e));
+      .catch((e) => res.status(502).json(e));
   },
   delete: (req, res) => {
     Book.destroy({
@@ -38,7 +41,6 @@ module.exports = {
       .catch((e) => res.satus(500).json(e));
   },
   search: (req, res) => {
-    console.log('search called');
     const { search } = req.query;
     Book.findAll({
       include: [Author],
@@ -54,6 +56,7 @@ module.exports = {
       .catch((e) => res.status(500).json(search));
   },
   update: (req, res) => {
+    req.body.image = req.body.image || null;
     Book.update(req.body, {
       where: { id: req.params.id },
     })
@@ -62,9 +65,13 @@ module.exports = {
           where: { id: req.body.AuthorId },
         })
           .then(() => res.status(200).json())
-          .catch((e) => res.status(500).json(e));
+          .catch((e) => {
+            res.status(500).json(e);
+          });
       })
       .then((ret) => res.status(200).json(ret))
-      .catch((e) => res.status(501).json(e));
+      .catch((e) => {
+        res.status(500).json(e);
+      });
   },
 };

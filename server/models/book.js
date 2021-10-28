@@ -34,7 +34,12 @@ module.exports = (sequelize, DataTypes) => {
       image: {
         type: DataTypes.STRING,
         validate: {
-          isUrl: true,
+          isUrlSimple(value) {
+            if (!value.startsWith('http://')) {
+              throw new Error('Validation isUrlSimple on image failed');
+            }
+          },
+          // isUrl: { require_protocol: true, require_tld: false },
         },
       },
       published: { type: DataTypes.DATEONLY },
